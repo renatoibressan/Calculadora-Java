@@ -8,7 +8,7 @@ public class AvancadoService {
         int i;
         if (b == 0) {
             if (a == 0) throw new ArithmeticException("Divisao por zero detectada!");
-            else return 1;
+            return 1;
         } else if (b > 0) {
             for (i = 0; i < b; i++) {
                 p *= a;
@@ -23,7 +23,7 @@ public class AvancadoService {
     }
     public long fatorial(int n) {
         if (n < 0) throw new IllegalArgumentException("Fatorial de negativos detectada!");
-        if (n == 0) return 1;
+        if (n == 0 || n == 1) return 1;
         long f = 1;
         for (int i = n; i >= 1; i--) {
             f *= i;
