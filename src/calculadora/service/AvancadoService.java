@@ -22,7 +22,7 @@ public class AvancadoService {
         return p;
     }
     public long fatorial(int n) {
-        if (n < 0) throw new IllegalArgumentException("Fatorial de negativos detectada!");
+        if (n < 0) throw new IllegalArgumentException("Fatorial de negativo detectada!");
         if (n == 0 || n == 1) return 1;
         long f = 1;
         for (int i = n; i >= 1; i--) {
