@@ -55,7 +55,7 @@ public class AbaC {
                     a = sc.nextInt();
                     System.out.print("Digite o segundo numero: ");
                     b = sc.nextInt();
-                    resultadoBoolean = comp.maiorQue(a, b);
+                    resultadoBoolean = comp.menorQue(a, b);
                     afirmacao = MathUtils.verdadeiroOuFalso(resultadoBoolean);
                     System.out.println("\n" + a + " < " + b + ": " + afirmacao + "\n");
                     break;

@@ -5,14 +5,10 @@ import java.util.Scanner;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        try {
-            MenuPrincipal.executarMenuPrincipal(sc);
-        } catch (InterruptedException e) {
-            System.out.println("\nProblema ao abrir o menu principal!\n");
-        }
+        MenuPrincipal.executarMenuPrincipal(sc);
         sc.close();
     }
 }

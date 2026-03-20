@@ -14,6 +14,7 @@ public class AvancadoService {
                 p *= a;
             }
         } else {
+            if (a == 0) throw new ArithmeticException("Divisao por zero detectada!");
             for (i = 0; i > b; i--) {
                 p /= a;
             }
