@@ -38,4 +38,21 @@ public class AritmeticaService {
         }
         return p;
     }
+    public double raizQuadrada(double m) {
+        if (m < 0) throw new ArithmeticException("Raiz quadrada de negativo detectada!");
+        if (m == 0 || m == 1) return m;
+        double x = m;
+        double y = 1.0;
+        double precisao = 0.0000000001;
+        double diff;
+        do {
+            x = (x + y) / 2;
+            y = m / x;
+            diff = (x > y) ? x - y : y - x;
+        } while (diff > precisao);
+        return x;
+    }
+    public int modulo(int n) {
+        return (n < 0) ? -n : n;
+    }
 }

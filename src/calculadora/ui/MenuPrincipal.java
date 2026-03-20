@@ -9,9 +9,9 @@ public class MenuPrincipal {
         String load = "...";
         do {
             System.out.print("\n");
-            System.out.println("A. Aba A: operacoes basicas");
-            System.out.println("B. Aba B: operacoes avancadas");
-            System.out.println("C. Aba C: operacoes booleanas");
+            System.out.println("A. Aba A: operacoes aritmeticas");
+            System.out.println("B. Aba B: operacoes sequenciais");
+            System.out.println("C. Aba C: operacoes de comparacao");
             System.out.println("0. Encerrar o programa");
             System.out.print("\nSelecione uma das opcoes acima: ");
             option = Character.toUpperCase(sc.next().charAt(0));

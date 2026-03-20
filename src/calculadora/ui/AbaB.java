@@ -1,22 +1,19 @@
 package calculadora.ui;
-import calculadora.service.AvancadoService;
+import calculadora.service.SequenciasService;
 import calculadora.util.MathUtils;
 import java.util.Scanner;
 
 public class AbaB {
     public static void executarAbaB(Scanner sc) throws InterruptedException {
         System.out.println("\n===== ABA B =====\n");
-        int option = -1, casasDecimais, f;
-        int n, a, b, resultadoInt;
-        double m, resultadoDouble;
+        int option = -1, casasDecimais;
+        int n, a, b;
+        double resultadoDouble;
         long resultadoLong;
         String load = "...";
-        AvancadoService avanc = new AvancadoService();
+        SequenciasService seq = new SequenciasService();
         do {
-            f = 0;
             casasDecimais = 0;
-            System.out.println("7. Raiz quadrada");
-            System.out.println("8. Modulo");
             System.out.println("9. Fatorial");
             System.out.println("10. Media de dois");
             System.out.println("11. Somatorio");
@@ -25,29 +22,11 @@ public class AbaB {
             System.out.print("\nEscolha uma das opcoes acima: ");
             option = sc.nextInt();
             switch (option) {
-                case 7:
-                    System.out.print("\nDigite uma base real nao negativa: ");
-                    m = sc.nextDouble();
-                    try {
-                        resultadoDouble = avanc.raizQuadrada(m);
-                        if (!MathUtils.inteiroOuNao(m)) f = MathUtils.contarCasasDecimais(m);
-                        if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
-                        System.out.println("\n" + String.format("%." + f + "f", m) + " ^ 1/2 = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
-                    } catch (ArithmeticException e) {
-                        System.out.println("\n" + e.getMessage() + "\n");
-                    }
-                    break;
-                case 8:
-                    System.out.print("\nDigite um numero inteiro: ");
-                    n = sc.nextInt();
-                    resultadoInt = avanc.modulo(n);
-                    System.out.println("\n|" + n + "| = " + resultadoInt + "\n");
-                    break;
                 case 9:
                     System.out.print("\nDigite um numero natural: ");
                     n = sc.nextInt();
                     try {
-                        resultadoLong = avanc.fatorial(n);
+                        resultadoLong = seq.fatorial(n);
                         System.out.println("\n" + n + "! = " + resultadoLong + "\n");
                     } catch (IllegalArgumentException e) {
                         System.out.println("\n" + e.getMessage() + "\n");
@@ -58,7 +37,7 @@ public class AbaB {
                     a = sc.nextInt();
                     System.out.print("Digite a segunda parcela: ");
                     b = sc.nextInt();
-                    resultadoDouble = avanc.mediaDeDois(a, b);
+                    resultadoDouble = seq.mediaDeDois(a, b);
                     if ((a + b) % 2 != 0) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                     System.out.println("\nMedia de " + a + " e " + b + ": " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     break;
@@ -72,7 +51,7 @@ public class AbaB {
                         a = b;
                         b = temp;
                     }
-                    resultadoLong = avanc.somatorio(a, b);
+                    resultadoLong = seq.somatorio(a, b);
                     System.out.println("\nSomatorio de " + a + " -> " + b + ": " + resultadoLong + "\n");
                     break;
                 case 12:
@@ -85,7 +64,7 @@ public class AbaB {
                         a = b;
                         b = temp;
                     }
-                    resultadoLong = avanc.produtorio(a, b);
+                    resultadoLong = seq.produtorio(a, b);
                     System.out.println("\nProdutorio de " + a + " -> " + b + ": " + resultadoLong + "\n");
                     break;
                 case 0:

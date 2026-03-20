@@ -1,7 +1,7 @@
 package calculadora.service;
 
-public class AvancadoService {
-    public AvancadoService() {
+public class SequenciasService {
+    public SequenciasService() {
     }
     public double raizQuadrada(double m) {
         if (m < 0) throw new ArithmeticException("Raiz quadrada de negativo detectada!");

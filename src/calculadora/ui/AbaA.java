@@ -6,12 +6,13 @@ import java.util.Scanner;
 public class AbaA {
     public static void executarAbaA(Scanner sc) throws InterruptedException {
         System.out.println("\n===== ABA A =====\n");
-        int option = -1, casasDecimais;
-        int a, b, resultadoInt;
-        double resultadoDouble;
+        int option = -1, casasDecimais, f;
+        int a, b, n, resultadoInt;
+        double m, resultadoDouble;
         String load = "...";
         AritmeticaService arit = new AritmeticaService();
         do {
+            f = 0;
             casasDecimais = 0;
             System.out.println("1. Adicao");
             System.out.println("2. Subtracao");
@@ -19,6 +20,8 @@ public class AbaA {
             System.out.println("4. Divisao");
             System.out.println("5. Resto");
             System.out.println("6. Potenciacao");
+            System.out.println("7. Raiz quadrada");
+            System.out.println("8. Modulo");
             System.out.println("0. Retornar ao menu principal");
             System.out.print("\nEscolha uma das opcoes acima: ");
             option = sc.nextInt();
@@ -84,6 +87,24 @@ public class AbaA {
                     } catch (ArithmeticException e) {
                         System.out.println("\n" + e.getMessage() + "\n");
                     }
+                    break;
+                case 7:
+                    System.out.print("\nDigite uma base real nao negativa: ");
+                    m = sc.nextDouble();
+                    try {
+                        resultadoDouble = arit.raizQuadrada(m);
+                        if (!MathUtils.inteiroOuNao(m)) f = MathUtils.contarCasasDecimais(m);
+                        if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
+                        System.out.println("\n" + String.format("%." + f + "f", m) + " ^ 1/2 = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                    } catch (ArithmeticException e) {
+                        System.out.println("\n" + e.getMessage() + "\n");
+                    }
+                    break;
+                case 8:
+                    System.out.print("\nDigite um numero inteiro: ");
+                    n = sc.nextInt();
+                    resultadoInt = arit.modulo(n);
+                    System.out.println("\n|" + n + "| = " + resultadoInt + "\n");
                     break;
                 case 0:
                     System.out.print("\nRetornando ao menu principal");
