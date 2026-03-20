@@ -30,7 +30,7 @@ public class AbaB {
                     m = sc.nextDouble();
                     try {
                         resultadoDouble = avanc.raizQuadrada(m);
-                        if (m != (int) m) {
+                        if (m != (int) m || resultadoDouble != (int) resultadoDouble) {
                             f = MathUtils.contarCasasDecimais(m);
                             casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         }

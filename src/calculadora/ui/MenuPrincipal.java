@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class MenuPrincipal {
     public static void executarMenuPrincipal(Scanner sc) throws InterruptedException {
         System.out.println("\n====== CALCULADORA BRESSAN ======\n");
-        System.out.println("Desenvolvido por: Renato Ikeda Bressan\n");
+        System.out.println("Desenvolvido por: Renato Ikeda Bressan");
         char option = 'X';
         String load = "...";
         do {
