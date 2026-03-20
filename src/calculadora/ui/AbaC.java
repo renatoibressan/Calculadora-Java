@@ -13,17 +13,17 @@ public class AbaC {
         String load = "...";
         ComparacaoService comp = new ComparacaoService();
         do {
-            System.out.println("13. Igual a");
-            System.out.println("14. Diferente de");
-            System.out.println("15. Maior que");
-            System.out.println("16. Menor que");
-            System.out.println("17. Maior ou igual a");
-            System.out.println("18. Menor ou igual a");
+            System.out.println("17. Igual a");
+            System.out.println("18. Diferente de");
+            System.out.println("19. Maior que");
+            System.out.println("20. Menor que");
+            System.out.println("21. Maior ou igual a");
+            System.out.println("22. Menor ou igual a");
             System.out.println("0. Retornar ao menu principal");
             System.out.print("\nEscolha uma das opcoes acima: ");
             option = sc.nextInt();
             switch (option) {
-                case 13:
+                case 17:
                     System.out.print("\nDigite um numero para ser comparado: ");
                     a = sc.nextInt();
                     System.out.print("Digite outro numero para comparar ao anterior: ");
@@ -32,7 +32,7 @@ public class AbaC {
                     afirmacao = MathUtils.verdadeiroOuFalso(resultadoBoolean);
                     System.out.println("\n" + a + " == " + b + ": " + afirmacao + "\n");
                     break;
-                case 14:
+                case 18:
                     System.out.print("\nDigite um numero para ser comparado: ");
                     a = sc.nextInt();
                     System.out.print("Digite outro numero para comparar ao anterior: ");
@@ -41,7 +41,7 @@ public class AbaC {
                     afirmacao = MathUtils.verdadeiroOuFalso(resultadoBoolean);
                     System.out.println("\n" + a + " != " + b + ": " + afirmacao + "\n");
                     break;
-                case 15:
+                case 19:
                     System.out.print("\nDigite um numero para ser comparado: ");
                     a = sc.nextInt();
                     System.out.print("Digite outro numero para comparar ao anterior: ");
@@ -50,7 +50,7 @@ public class AbaC {
                     afirmacao = MathUtils.verdadeiroOuFalso(resultadoBoolean);
                     System.out.println("\n" + a + " > " + b + ": " + afirmacao + "\n");
                     break;
-                case 16:
+                case 20:
                    System.out.print("\nDigite um numero para ser comparado: ");
                     a = sc.nextInt();
                     System.out.print("Digite outro numero para comparar ao anterior: ");
@@ -59,7 +59,7 @@ public class AbaC {
                     afirmacao = MathUtils.verdadeiroOuFalso(resultadoBoolean);
                     System.out.println("\n" + a + " < " + b + ": " + afirmacao + "\n");
                     break;
-                case 17:
+                case 21:
                     System.out.print("\nDigite um numero para ser comparado: ");
                     a = sc.nextInt();
                     System.out.print("Digite outro numero para comparar ao anterior: ");
@@ -68,7 +68,7 @@ public class AbaC {
                     afirmacao = MathUtils.verdadeiroOuFalso(resultadoBoolean);
                     System.out.println("\n" + a + " >= " + b + ": " + afirmacao + "\n");
                     break;
-                case 18:
+                case 22:
                     System.out.print("\nDigite um numero para ser comparado: ");
                     a = sc.nextInt();
                     System.out.print("Digite outro numero para comparar ao anterior: ");

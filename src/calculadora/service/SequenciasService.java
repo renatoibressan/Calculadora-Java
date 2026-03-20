@@ -3,23 +3,6 @@ package calculadora.service;
 public class SequenciasService {
     public SequenciasService() {
     }
-    public double raizQuadrada(double m) {
-        if (m < 0) throw new ArithmeticException("Raiz quadrada de negativo detectada!");
-        if (m == 0 || m == 1) return m;
-        double x = m;
-        double y = 1.0;
-        double precisao = 0.0000000001;
-        double diff;
-        do {
-            x = (x + y) / 2;
-            y = m / x;
-            diff = (x > y) ? x - y : y - x;
-        } while (diff > precisao);
-        return x;
-    }
-    public int modulo(int n) {
-        return (n < 0) ? -n : n;
-    }
     public long fatorial(int n) {
         if (n < 0) throw new IllegalArgumentException("Fatorial de negativo detectada!");
         if (n == 0 || n == 1) return 1;
@@ -29,8 +12,16 @@ public class SequenciasService {
         }
         return f;
     }
-    public double mediaDeDois(int a, int b) {
-        return ((double)a + (double)b) / 2;
+    public long termoFibonacci(int n) {
+        if (n < 0) throw new IllegalArgumentException("Termo invalido detectado!");
+        if (n == 0 || n == 1) return n;
+        long anterior  = 1, atual = 1, proximo;
+        for (int i = 2; i <= n; i++) {
+            proximo = anterior + atual;
+            anterior = atual;
+            atual = proximo;
+        }
+        return atual;
     }
     public long somatorio(int a, int b) {
         long s = 0;
@@ -45,5 +36,22 @@ public class SequenciasService {
             p *= i;
         }
         return p;
+    }
+    public double termoPA(double a1, double razao, int n) {
+        if (n < 2) throw new IllegalArgumentException("Posicao de termo invalida detectada!");
+        return a1 + (n - 1) * razao;
+    }
+    public double somaPA(double a1, double razao, int n) {
+        if (n < 2) throw new IllegalArgumentException("Posicao de termo invalida detectada!");
+        return ((a1 + termoPA(a1, razao, n)) * n) / 2;
+    }
+    public double termoPG(double a1, double razao, int n) {
+        if (n < 2) throw new IllegalArgumentException("Posicao de termo invalida detectada!");
+        return a1 * Math.pow(razao, n - 1);
+    }
+    public double somaPG(double a1, double razao, int n) {
+        if (n < 2) throw new IllegalArgumentException("Posicao de termo invalida detectada!");
+        if (razao == 1) throw new IllegalArgumentException("Razao invalida detectada!");
+        return (a1 * (Math.pow(razao, n) - 1)) / (razao - 1);
     }
 }
