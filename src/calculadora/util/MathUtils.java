@@ -6,7 +6,6 @@ public class MathUtils {
         return valor.length() - valor.indexOf('.') - 1;
     }
     public static String verdadeiroOuFalso(boolean afirmacao) {
-        if (afirmacao == true) return "verdadeiro";
-        else return "falso";
+        return valor ? "verdadeiro" : "falso";
     }
 }
