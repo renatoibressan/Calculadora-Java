@@ -14,4 +14,7 @@ public class MathUtils {
     public static String verdadeiroOuFalso(boolean afirmacao) {
         return afirmacao ? "verdadeiro" : "falso";
     }
+    public static String primoOuNao(boolean afirmacao) {
+        return afirmacao ? "primo" : "nao primo";
+    }
 }
