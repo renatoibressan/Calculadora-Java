@@ -3,23 +3,18 @@ package calculadora.service;
 public class AvancadoService {
     public AvancadoService() {
     }
-    public double potenciacao(int a, int b) {
-        double p = 1.0;
-        int i;
-        if (b == 0) {
-            if (a == 0) throw new ArithmeticException("Divisao por zero detectada!");
-            return 1;
-        } else if (b > 0) {
-            for (i = 0; i < b; i++) {
-                p *= a;
-            }
-        } else {
-            if (a == 0) throw new ArithmeticException("Divisao por zero detectada!");
-            for (i = 0; i > b; i--) {
-                p /= a;
-            }
+    public double raizQuadrada(double m, double p) {
+        if (m < 0) throw new ArithmeticException("Raiz quadrada de negativo detectada!");
+        if (m == 0 || m == 1) return m;
+        double x = m, y = 1.0;
+        while (x - y > p) {
+            x = (x + y) / 2;
+            y = m / x;
         }
-        return p;
+        return x;
+    }
+    public int modulo(int n) {
+        return (n < 0) ? -n : n;
     }
     public long fatorial(int n) {
         if (n < 0) throw new IllegalArgumentException("Fatorial de negativo detectada!");
@@ -34,11 +29,6 @@ public class AvancadoService {
         return ((double)a + (double)b) / 2;
     }
     public long somatorio(int a, int b) {
-        if (a > b) {
-            int temp = a;
-            a = b;
-            b = temp;
-        }
         long s = 0;
         for (int i = a; i <= b; i++) {
             s += i;
@@ -46,11 +36,6 @@ public class AvancadoService {
         return s;
     }
     public long produtorio(int a, int b) {
-        if (a > b) {
-            int temp = a;
-            a = b;
-            b = temp;
-        }
         long p = 1;
         for (int i = a; i <= b; i++) {
             p *= i;

@@ -18,38 +18,39 @@ public class AbaA {
             System.out.println("3. Multiplicacao");
             System.out.println("4. Divisao");
             System.out.println("5. Resto");
+            System.out.println("6. Potenciacao");
             System.out.println("0. Retornar ao menu principal");
             System.out.print("\nEscolha uma das opcoes acima: ");
             option = sc.nextInt();
             switch (option) {
                 case 1:
-                    System.out.print("\nDigite o primeiro numero: ");
+                    System.out.print("\nDigite a primeira parcela: ");
                     a = sc.nextInt();
-                    System.out.print("Digite o segundo numero: ");
+                    System.out.print("Digite a segunda parcela: ");
                     b = sc.nextInt();
                     resultadoInt = arit.adicao(a, b);
                     System.out.println("\n" + a + " + " + b + " = " + resultadoInt + "\n");
                     break;
                 case 2:
-                    System.out.print("\nDigite o primeiro numero: ");
+                    System.out.print("\nDigite o minuendo: ");
                     a = sc.nextInt();
-                    System.out.print("Digite o segundo numero: ");
+                    System.out.print("Digite o subtraendo: ");
                     b = sc.nextInt();
                     resultadoInt = arit.subtracao(a, b);
                     System.out.println("\n" + a + " - " + b + " = " + resultadoInt + "\n");
                     break;
                 case 3:
-                    System.out.print("\nDigite o primeiro numero: ");
+                    System.out.print("\nDigite o primeiro fator: ");
                     a = sc.nextInt();
-                    System.out.print("Digite o segundo numero: ");
+                    System.out.print("Digite o segundo fator: ");
                     b = sc.nextInt();
                     resultadoInt = arit.multiplicacao(a, b);
                     System.out.println("\n" + a + " * " + b + " = " + resultadoInt + "\n");
                     break;
                 case 4:
-                    System.out.print("\nDigite o primeiro numero: ");
+                    System.out.print("\nDigite o dividendo: ");
                     a = sc.nextInt();
-                    System.out.print("Digite o segundo numero: ");
+                    System.out.print("Digite o divisor: ");
                     b = sc.nextInt();
                     try {
                         resultadoDouble = arit.divisao(a, b);
@@ -60,13 +61,26 @@ public class AbaA {
                     }
                     break;
                 case 5:
-                    System.out.print("\nDigite o primeiro numero: ");
+                    System.out.print("\nDigite o dividendo: ");
                     a = sc.nextInt();
-                    System.out.print("Digite o segundo numero: ");
+                    System.out.print("Digite o divisor: ");
                     b = sc.nextInt();
                     try {
                         resultadoInt = arit.resto(a, b);
                         System.out.println("\n" + a + " % " + b + " = " + resultadoInt + "\n");
+                    } catch (ArithmeticException e) {
+                        System.out.println("\n" + e.getMessage() + "\n");
+                    }
+                    break;
+                case 6:
+                    System.out.print("\nDigite a base: ");
+                    a = sc.nextInt();
+                    System.out.print("Digite o expoente: ");
+                    b = sc.nextInt();
+                    try {
+                        resultadoDouble = arit.potenciacao(a, b);
+                        if (b < 0) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
+                        System.out.println("\n" + a + " ^ " + b + " = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (ArithmeticException e) {
                         System.out.println("\n" + e.getMessage() + "\n");
                     }

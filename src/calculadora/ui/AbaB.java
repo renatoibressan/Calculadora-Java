@@ -7,37 +7,44 @@ public class AbaB {
     public static void executarAbaB(Scanner sc) throws InterruptedException {
         System.out.println("\n===== ABA B =====\n");
         int option = -1, casasDecimais;
-        int n, a, b;
+        int n, a, b, resultadoInt;
+        double m, p, resultadoDouble;
         long resultadoLong;
-        double resultadoDouble;
         String load = "...";
         AvancadoService avanc = new AvancadoService();
         do {
             casasDecimais = 0;
-            System.out.println("6. Potenciacao");
-            System.out.println("7. Fatorial");
-            System.out.println("8. Media de dois");
-            System.out.println("9. Somatorio");
-            System.out.println("10. Produtorio");
+            System.out.println("7. Raiz quadrada");
+            System.out.println("8. Modulo");
+            System.out.println("9. Fatorial");
+            System.out.println("10. Media de dois");
+            System.out.println("11. Somatorio");
+            System.out.println("12. Produtorio");
             System.out.println("0. Retornar ao menu principal");
             System.out.print("\nEscolha uma das opcoes acima: ");
             option = sc.nextInt();
             switch (option) {
-                case 6:
-                    System.out.print("\nDigite o primeiro numero: ");
-                    a = sc.nextInt();
-                    System.out.print("Digite o segundo numero: ");
-                    b = sc.nextInt();
+                case 7:
+                    System.out.print("\nDigite uma base real nao negativa: ");
+                    m = sc.nextDouble();
+                    System.out.print("Digite a precisao desejada: ");
+                    p = sc.nextDouble();
                     try {
-                        resultadoDouble = avanc.potenciacao(a, b);
-                        if (b < 0) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
-                        System.out.println("\n" + a + " ^ " + b + " = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        resultadoDouble = avanc.raizQuadrada(m, p);
+                        if (m != (int) m) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
+                        System.out.println("\n" + m + " ^ 1/2 = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (ArithmeticException e) {
                         System.out.println("\n" + e.getMessage() + "\n");
                     }
                     break;
-                case 7:
-                    System.out.print("\nDigite um numero: ");
+                case 8:
+                    System.out.print("\nDigite um numero inteiro: ");
+                    n = sc.nextInt();
+                    resultadoInt = avanc.modulo(n);
+                    System.out.println("\n|" + n + "| = " + resultadoInt + "\n");
+                    break;
+                case 9:
+                    System.out.print("\nDigite um numero natural: ");
                     n = sc.nextInt();
                     try {
                         resultadoLong = avanc.fatorial(n);
@@ -46,39 +53,39 @@ public class AbaB {
                         System.out.println("\n" + e.getMessage() + "\n");
                     }
                     break;
-                case 8:
-                    System.out.print("\nDigite o primeiro numero: ");
+                case 10:
+                    System.out.print("\nDigite a primeira parcela: ");
                     a = sc.nextInt();
-                    System.out.print("Digite o segundo numero: ");
+                    System.out.print("Digite a segunda parcela: ");
                     b = sc.nextInt();
                     resultadoDouble = avanc.mediaDeDois(a, b);
                     if ((a + b) % 2 != 0) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                     System.out.println("\nMedia de " + a + " e " + b + ": " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     break;
-                case 9:
-                    System.out.print("\nDigite o primeiro numero: ");
+                case 11:
+                    System.out.print("\nDigite o limite inferior: ");
                     a = sc.nextInt();
-                    System.out.print("Digite o segundo numero: ");
+                    System.out.print("Digite o limite superior: ");
                     b = sc.nextInt();
-                    resultadoLong = avanc.somatorio(a, b);
                     if (a > b) {
                         int temp = a;
                         a = b;
                         b = temp;
                     }
+                    resultadoLong = avanc.somatorio(a, b);
                     System.out.println("\nSomatorio de " + a + " -> " + b + ": " + resultadoLong + "\n");
                     break;
-                case 10:
-                    System.out.print("\nDigite o primeiro numero: ");
+                case 12:
+                    System.out.print("\nDigite o limite inferior: ");
                     a = sc.nextInt();
-                    System.out.print("Digite o segundo numero: ");
+                    System.out.print("Digite o limite superior: ");
                     b = sc.nextInt();
-                    resultadoLong = avanc.produtorio(a, b);
                     if (a > b) {
                         int temp = a;
                         a = b;
                         b = temp;
                     }
+                    resultadoLong = avanc.produtorio(a, b);
                     System.out.println("\nProdutorio de " + a + " -> " + b + ": " + resultadoLong + "\n");
                     break;
                 case 0:

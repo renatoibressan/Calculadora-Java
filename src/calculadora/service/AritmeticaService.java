@@ -20,4 +20,22 @@ public class AritmeticaService {
         if (b == 0) throw new ArithmeticException("Divisao por zero detectada!");
         return a % b;
     }
+    public double potenciacao(int a, int b) {
+        double p = 1.0;
+        int i;
+        if (b == 0) {
+            if (a == 0) throw new ArithmeticException("Divisao por zero detectada!");
+            return 1;
+        } else if (b > 0) {
+            for (i = 0; i < b; i++) {
+                p *= a;
+            }
+        } else {
+            if (a == 0) throw new ArithmeticException("Divisao por zero detectada!");
+            for (i = 0; i > b; i--) {
+                p /= a;
+            }
+        }
+        return p;
+    }
 }
