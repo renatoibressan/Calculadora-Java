@@ -13,6 +13,8 @@ public class MenuPrincipal {
             System.out.println("B. Aba B: operacoes sequenciais");
             System.out.println("C. Aba C: operacoes de comparacao");
             System.out.println("D. Aba D: operacoes trigonometricas");
+            System.out.println("E. Aba E: operacoes teoricas");
+            System.out.println("F. Aba F: operacoes estatisticas");
             System.out.println("0. Encerrar o programa");
             System.out.print("\nSelecione uma das opcoes acima: ");
             option = Character.toUpperCase(sc.next().charAt(0));
