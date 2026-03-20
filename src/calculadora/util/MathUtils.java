@@ -8,6 +8,9 @@ public class MathUtils {
     public static boolean inteiroOuNao(double n) {
         return Math.abs(n - Math.round(n)) < 1e-9;
     }
+    public static boolean zeroOuNao(double x) {
+        return Math.abs(x) < 1e-10;
+    }
     public static String verdadeiroOuFalso(boolean afirmacao) {
         return afirmacao ? "verdadeiro" : "falso";
     }

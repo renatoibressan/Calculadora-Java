@@ -12,6 +12,7 @@ public class MenuPrincipal {
             System.out.println("A. Aba A: operacoes aritmeticas");
             System.out.println("B. Aba B: operacoes sequenciais");
             System.out.println("C. Aba C: operacoes de comparacao");
+            System.out.println("D. Aba D: operacoes trigonometricas");
             System.out.println("0. Encerrar o programa");
             System.out.print("\nSelecione uma das opcoes acima: ");
             option = Character.toUpperCase(sc.next().charAt(0));
@@ -45,6 +46,16 @@ public class MenuPrincipal {
                     }
                     System.out.print("\n");
                     AbaC.executarAbaC(sc);
+                    break;
+                case 'D':
+                    System.out.print("\nAbrindo a aba D");
+                    Thread.sleep(750);
+                    for (char c : load.toCharArray()) {
+                        System.out.print(c);
+                        Thread.sleep(150);
+                    }
+                    System.out.print("\n");
+                    AbaD.executarAbaD(sc);
                     break;
                 case '0':
                     System.out.print("\nEncerrando o programa");
