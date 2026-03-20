@@ -31,7 +31,7 @@ public class AbaB {
                     p = sc.nextDouble();
                     try {
                         resultadoDouble = avanc.raizQuadrada(m, p);
-                        if (m != (int) m) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
+                        if (m != (int) m && p != (int) p) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\n" + m + " ^ 1/2 = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (ArithmeticException e) {
                         System.out.println("\n" + e.getMessage() + "\n");
