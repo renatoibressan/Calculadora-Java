@@ -9,7 +9,8 @@ public class AvancadoService {
         double x = m;
         double y = 1.0;
         double precisao = 0.0000000001;
-        while (x - y > precisao) {
+        double diff = (x < y) ? y - x : x - y;
+        while (diff > precisao) {
             x = (x + y) / 2;
             y = m / x;
         }
