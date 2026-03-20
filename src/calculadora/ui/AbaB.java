@@ -30,12 +30,8 @@ public class AbaB {
                     m = sc.nextDouble();
                     try {
                         resultadoDouble = avanc.raizQuadrada(m);
-                        if (m != (int) m) {
-                            f = MathUtils.contarCasasDecimais(m);
-                        }
-                        if (resultadoDouble != (int) resultadoDouble) {
-                            casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
-                        }
+                        if (!MathUtils.inteiroOuNao(m)) f = MathUtils.contarCasasDecimais(m);
+                        if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\n" + String.format("%." + f + "f", m) + " ^ 1/2 = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (ArithmeticException e) {
                         System.out.println("\n" + e.getMessage() + "\n");
