@@ -60,7 +60,7 @@ public class AbaA {
                         if (a % b != 0) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\n" + a + " / " + b + " = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (ArithmeticException e) {
-                        System.out.println("\n" + e.getMessage() + "\n");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 5:
@@ -72,7 +72,7 @@ public class AbaA {
                         resultadoInt = arit.resto(a, b);
                         System.out.println("\n" + a + " % " + b + " = " + resultadoInt + "\n");
                     } catch (ArithmeticException e) {
-                        System.out.println("\n" + e.getMessage() + "\n");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 6:
@@ -85,7 +85,7 @@ public class AbaA {
                         if (b < 0) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\n" + a + " ^ " + b + " = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (ArithmeticException e) {
-                        System.out.println("\n" + e.getMessage() + "\n");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 7:
@@ -97,7 +97,7 @@ public class AbaA {
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\n" + String.format("%." + f + "f", m) + " ^ 1/2 = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (ArithmeticException e) {
-                        System.out.println("\n" + e.getMessage() + "\n");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 8:

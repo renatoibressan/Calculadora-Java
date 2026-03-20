@@ -33,7 +33,7 @@ public class AbaB {
                         resultadoLong = seq.fatorial(n);
                         System.out.println("\n" + n + "! = " + resultadoLong + "\n");
                     } catch (IllegalArgumentException e) {
-                        System.out.println("\n" + e.getMessage() + "\n");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 10:
@@ -43,7 +43,7 @@ public class AbaB {
                         resultadoLong = seq.termoFibonacci(n);
                         System.out.println("\nF" + n + " = " + resultadoLong + "\n");
                     } catch (IllegalArgumentException e) {
-                        System.out.println("\n" + e.getMessage() + "\n");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 11:
@@ -99,7 +99,7 @@ public class AbaB {
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\nS(" + n + ") = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (IllegalArgumentException e) {
-                        System.out.println("\n" + e.getMessage() + "\n");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 15:
@@ -114,7 +114,7 @@ public class AbaB {
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\na" + n + " = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (IllegalArgumentException e) {
-                        System.out.println("\n" + e.getMessage() + "\n");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 16:
@@ -129,7 +129,7 @@ public class AbaB {
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\nS(" + n + ") = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (IllegalArgumentException e) {
-                        System.out.println("\n" + e.getMessage() + "\n");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 0:

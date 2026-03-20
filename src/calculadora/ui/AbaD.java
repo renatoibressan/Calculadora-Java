@@ -60,7 +60,7 @@ public class AbaD {
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\ntan(" + String.format("%." + f + "f", x) + ") = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (ArithmeticException e) {
-                        System.out.println("\n" + e.getMessage() + "\n");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 27:
@@ -72,7 +72,7 @@ public class AbaD {
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\narcsen(" + String.format("%." + f + "f", razao) + ") = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (ArithmeticException e) {
-                        System.out.println("\n" + e.getMessage() + "\n");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 28:
@@ -84,7 +84,7 @@ public class AbaD {
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\narccoss(" + String.format("%." + f + "f", razao) + ") = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (ArithmeticException e) {
-                        System.out.println("\n" + e.getMessage() + "\n");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 29:
@@ -96,7 +96,7 @@ public class AbaD {
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\narctan(" + String.format("%." + f + "f", razao) + ") = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (ArithmeticException e) {
-                        System.out.println("\n" + e.getMessage() + "\n");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 30:
@@ -108,7 +108,7 @@ public class AbaD {
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\nsec(" + String.format("%." + f + "f", x) + ") = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (ArithmeticException e) {
-                        System.out.println("\n" + e.getMessage() + "\n");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 31:
@@ -120,7 +120,7 @@ public class AbaD {
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\ncossec(" + String.format("%." + f + "f", x) + ") = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (ArithmeticException e) {
-                        System.out.println("\n" + e.getMessage() + "\n");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 32:
@@ -132,7 +132,7 @@ public class AbaD {
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\ncotan(" + String.format("%." + f + "f", x) + ") = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (ArithmeticException e) {
-                        System.out.println("\n" + e.getMessage() + "\n");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 0:
