@@ -23,6 +23,7 @@ public class AbaD {
             System.out.println("30. Secante");
             System.out.println("31. Cossecante");
             System.out.println("32. Cotangente");
+            System.out.println("0. Retornar ao menu principal");
             System.out.print("\nEscolha uma das opcoes acima: ");
             option = sc.nextInt();
             switch (option) {
