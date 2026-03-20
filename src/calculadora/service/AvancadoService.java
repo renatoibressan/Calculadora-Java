@@ -9,12 +9,12 @@ public class AvancadoService {
         double x = m;
         double y = 1.0;
         double precisao = 0.0000000001;
-        double diff = x - y;
-        diff = (diff < 0) ? -diff : diff;
-        while (diff > precisao) {
+        double diff;
+        do {
             x = (x + y) / 2;
             y = m / x;
-        }
+            diff = (x > y) ? x - y : y - x;
+        } while (diff > precisao);
         return x;
     }
     public int modulo(int n) {
