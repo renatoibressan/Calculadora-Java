@@ -6,13 +6,14 @@ import java.util.Scanner;
 public class AbaB {
     public static void executarAbaB(Scanner sc) throws InterruptedException {
         System.out.println("\n===== ABA B =====\n");
-        int option = -1, casasDecimais;
+        int option = -1, casasDecimais, f;
         int n, a, b, resultadoInt;
-        double m, p, resultadoDouble;
+        double m, resultadoDouble;
         long resultadoLong;
         String load = "...";
         AvancadoService avanc = new AvancadoService();
         do {
+            f = 0;
             casasDecimais = 0;
             System.out.println("7. Raiz quadrada");
             System.out.println("8. Modulo");
@@ -27,12 +28,13 @@ public class AbaB {
                 case 7:
                     System.out.print("\nDigite uma base real nao negativa: ");
                     m = sc.nextDouble();
-                    System.out.print("Digite a precisao desejada: ");
-                    p = sc.nextDouble();
                     try {
-                        resultadoDouble = avanc.raizQuadrada(m, p);
-                        if (m != (int) m && p != (int) p) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
-                        System.out.println("\n" + m + " ^ 1/2 = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        resultadoDouble = avanc.raizQuadrada(m);
+                        if (m != (int) m) {
+                            f = MathUtils.contarCasasDecimais(m);
+                            casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
+                        }
+                        System.out.println("\n" + String.format("%." + f + "f", m) + " ^ 1/2 = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     } catch (ArithmeticException e) {
                         System.out.println("\n" + e.getMessage() + "\n");
                     }

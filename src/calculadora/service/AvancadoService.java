@@ -3,11 +3,13 @@ package calculadora.service;
 public class AvancadoService {
     public AvancadoService() {
     }
-    public double raizQuadrada(double m, double p) {
+    public double raizQuadrada(double m) {
         if (m < 0) throw new ArithmeticException("Raiz quadrada de negativo detectada!");
         if (m == 0 || m == 1) return m;
-        double x = m, y = 1.0;
-        while (x - y > p) {
+        double x = m;
+        double y = 1.0;
+        double precisao = 0.0000000001;
+        while (x - y > precisao) {
             x = (x + y) / 2;
             y = m / x;
         }
