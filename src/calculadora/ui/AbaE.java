@@ -1,7 +1,7 @@
 package calculadora.ui;
-import java.util.Scanner;
 import calculadora.service.NumerosService;
 import calculadora.util.MathUtils;
+import java.util.Scanner;
 
 public class AbaE {
     public static void executarAbaE(Scanner sc) throws InterruptedException {
@@ -17,6 +17,7 @@ public class AbaE {
             System.out.println("34. MMC");
             System.out.println("35. Primo ou nao");
             System.out.println("36. Quantidade de divisores");
+            System.out.println("0. Retornar ao menu principal");
             System.out.print("\nEscolha uma das opcoes acima: ");
             option = sc.nextInt();
             switch (option) {
