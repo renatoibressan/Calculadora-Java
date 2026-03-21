@@ -6,8 +6,7 @@ import java.util.Scanner;
 public class AbaE {
     public static void executarAbaE(Scanner sc) throws InterruptedException {
         System.out.println("\n===== ABA E =====\n");
-        int option = -1;
-        int n, a, b, resultadoInt;
+        int option = -1, n, a, b, resultadoInt;
         boolean resultadoBoolean;
         String afirmacao;
         String load = "...";

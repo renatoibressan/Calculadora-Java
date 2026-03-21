@@ -59,6 +59,26 @@ public class MenuPrincipal {
                     System.out.print("\n");
                     AbaD.executarAbaD(sc);
                     break;
+                case 'E':
+                    System.out.print("\nAbrindo a aba E");
+                    Thread.sleep(750);
+                    for (char c : load.toCharArray()) {
+                        System.out.print(c);
+                        Thread.sleep(150);
+                    }
+                    System.out.print("\n");
+                    AbaE.executarAbaE(sc);
+                    break;
+                case 'F':
+                    System.out.print("\nAbrindo a aba F");
+                    Thread.sleep(750);
+                    for (char c : load.toCharArray()) {
+                        System.out.print(c);
+                        Thread.sleep(150);
+                    }
+                    System.out.print("\n");
+                    AbaF.executarAbaF(sc);
+                    break;
                 case '0':
                     System.out.print("\nEncerrando o programa");
                     Thread.sleep(750);

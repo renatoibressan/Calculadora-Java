@@ -6,8 +6,7 @@ import java.util.Scanner;
 public class AbaB {
     public static void executarAbaB(Scanner sc) throws InterruptedException {
         System.out.println("\n===== ABA B =====\n");
-        int option = -1, casasDecimais;
-        int n, a, b;
+        int option = -1, casasDecimais, n, a, b;
         double a1, razao, resultadoDouble;
         long resultadoLong;
         String load = "...";
