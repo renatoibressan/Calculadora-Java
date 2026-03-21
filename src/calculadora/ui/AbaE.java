@@ -66,7 +66,7 @@ public class AbaE {
                     n = sc.nextInt();
                     try {
                         resultadoInt = num.quantidadeDivisores(n);
-                        System.out.println("\n" + n + " possui " + resultadoInt + " divisores inteiros\n");
+                        System.out.println("\n" + n + " possui " + resultadoInt + " divisores\n");
                     } catch (ArithmeticException e) {
                         System.out.println(e.getMessage());
                     }
