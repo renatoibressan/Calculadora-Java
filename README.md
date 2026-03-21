@@ -1,122 +1,152 @@
-# 🧮 Calculadora em Java (CLI)
+# 🧮 Calculadora Matemática Modular em Java
 
-Uma calculadora simples desenvolvida em Java para execução via terminal (CLI), com diversas operações matemáticas organizadas em menus interativos.
+Projeto desenvolvido em Java com foco em **modularização, organização por domínio matemático e implementação de algoritmos clássicos**.
+
+Diferente de calculadoras tradicionais, este projeto evolui para uma **mini biblioteca matemática**, cobrindo múltiplas áreas da matemática computacional.
 
 ---
 
-## 📌 Funcionalidades
+## 🚀 Visão Geral
 
-O programa é dividido em três abas principais:
+Este sistema foi projetado para:
 
-### 🔹 Aba A — Operações Básicas
+* Consolidar conceitos de **Programação Orientada a Objetos**
+* Implementar algoritmos matemáticos manualmente
+* Organizar funcionalidades por **domínio matemático**
+* Evoluir de um programa simples para uma arquitetura modular
 
-* Adição
-* Subtração
-* Multiplicação
-* Divisão
-* Resto da divisão
+---
 
-### 🔹 Aba B — Operações Avançadas
+## 📦 Módulos do Sistema
 
+O projeto está dividido em serviços independentes:
+
+### 🔹 Aritmética
+
+* Operações básicas (soma, subtração, multiplicação, divisão)
 * Potenciação
+* Módulo
+
+---
+
+### 🔹 Avançado
+
+* Raiz quadrada (implementação própria)
 * Fatorial
-* Média de dois números
-* Somatório em intervalo
-* Produtório em intervalo
-
-### 🔹 Aba C — Comparações
-
-* Igualdade
-* Diferença
-* Maior que
-* Menor que
-* Maior ou igual
-* Menor ou igual
+* Funções matemáticas adicionais
 
 ---
 
-## 🧱 Estrutura do Projeto
+### 🔹 Trigonometria
 
-O projeto foi modularizado para separar responsabilidades:
+* Seno, cosseno e tangente
+* Secante, cossecante e cotangente
+* Tratamento de indeterminações (ex: divisão por valores próximos de zero)
 
-```
+---
+
+### 🔹 Teoria dos Números
+
+* Verificação de primalidade
+* MDC (Algoritmo de Euclides)
+* MMC
+* Divisores e propriedades numéricas
+
+---
+
+### 🔹 Estatística
+
+* Média, mediana e moda
+* Variância (amostral)
+* Desvio padrão
+
+---
+
+### 🔹 Álgebra Linear
+
+* Soma de vetores
+* Produto escalar
+* Norma de vetor
+* Soma de matrizes
+* Multiplicação de matrizes
+* Determinantes
+
+---
+
+## 🧠 Diferenciais Técnicos
+
+* ✔️ Organização modular por domínio matemático
+* ✔️ Implementação manual de algoritmos (sem dependência de bibliotecas externas)
+* ✔️ Tratamento de exceções para validação de domínio matemático
+* ✔️ Separação parcial entre lógica e interface
+
+---
+
+## ⚙️ Estrutura do Projeto
+
+```text
 src/
- └── calculadora/
-      ├── main/        # Classe principal (Main)
-      ├── service/     # Regras de negócio (operações matemáticas)
-      ├── ui/          # Interface via terminal (menus e abas)
-      └── util/        # Funções auxiliares
+ ├── app/
+ │    └── MenuPrincipal.java
+ ├── service/
+ │    ├── AritmeticaService.java
+ │    ├── AvancadoService.java
+ │    ├── TrigonometricaService.java
+ │    ├── NumeroService.java
+ │    ├── EstatisticaService.java
+ │    └── AlgebraLinearService.java
+ └── utils/
+      └── MathUtils.java
 ```
 
 ---
 
-## ⚙️ Pré-requisitos
+## ▶️ Como Executar
 
-* Java JDK 8 ou superior
-* Terminal Linux (ou compatível com bash)
-
----
-
-## 🚀 Como compilar e executar (Linux)
-
-### 1. Clonar o repositório
+### 🔧 Linux / Terminal
 
 ```bash
-git clone https://github.com/renatoibressan/Calculadora-Java.git
-cd Calculadora-Java
+mkdir -p out
+find . -name "*.java" -exec javac -d out {} \;
+jar cfe SistemaDeNotas.jar app.MenuPrincipal -C out .
+java -jar SistemaDeNotas.jar
 ```
 
 ---
 
-### 2. Compilar o projeto
+## ⚠️ Validações Implementadas
 
-```bash
-mkdir -p ../out
-javac -d ../out $(find . -name "*.java")
-```
+O sistema trata diversos casos inválidos:
 
----
-
-### 3. Gerar o arquivo `.jar`
-
-```bash
-jar cfe ../Calculadora.jar calculadora.main.Main -C ../out .
-```
+* Divisão por zero
+* Raiz de número negativo
+* Matrizes incompatíveis
+* Vetores de tamanhos diferentes
+* Domínios matemáticos inválidos
 
 ---
 
-### 4. Executar
+## 🎯 Objetivo do Projeto
 
-```bash
-cd ..
-java -jar Calculadora.jar
-```
+Este projeto foi desenvolvido com foco em:
 
----
-
-## 🧠 Observações importantes
-
-* O projeto utiliza entrada via `Scanner`, portanto requer interação no terminal.
-* A aplicação foi pensada para fins educacionais, focando em lógica e organização de código.
-* Não há tratamento completo de erros para todos os cenários possíveis (ex: overflow, entradas inválidas complexas).
+* Evolução prática em Java
+* Construção de código modular
+* Implementação de algoritmos fundamentais
+* Estruturação de sistemas organizados
 
 ---
 
-## 📈 Possíveis melhorias
+## 🚀 Melhorias Futuras
 
-* Substituir menus baseados em `switch` por padrões de projeto (ex: Command)
-* Criar versão com interface gráfica (Swing ou JavaFX)
-* Transformar em API REST
-* Adicionar testes automatizados (JUnit)
-
----
-
-## 📄 Licença
-
-Este projeto é livre para uso e modificação para fins de estudo.
+* Interface gráfica (JavaFX ou Swing)
+* Refatoração da camada de interface (menu)
+* Testes automatizados (JUnit)
+* Implementação de algoritmos mais avançados
+* Entrada de dados mais robusta
 
 ---
 
-## 👤 Autor
+## 👨‍💻 Autor
 
-Desenvolvido por Renato Bressan
+Renato Bressan
