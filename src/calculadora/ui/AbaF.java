@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class AbaF {
     public static void executarAbaF(Scanner sc) throws InterruptedException {
         System.out.println("\n===== ABA F =====\n");
-        int option = -1, casasDecimais, n;
+        int option = -1, casasDecimais, n, i;
         double[] dados;
         double resultadoDouble;
         String load = "...";
@@ -29,7 +29,7 @@ public class AbaF {
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     dados = new double[n];
-                    for (int i = 0; i < n; i++) {
+                    for (i = 0; i < n; i++) {
                         System.out.print("Digite o valor do dado " +  (i + 1) + ": ");
                         dados[i] = sc.nextDouble();
                     }
@@ -45,7 +45,7 @@ public class AbaF {
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     dados = new double[n];
-                    for (int i = 0; i < n; i++) {
+                    for (i = 0; i < n; i++) {
                         System.out.print("Digite o valor do dado " +  (i + 1) + ": ");
                         dados[i] = sc.nextDouble();
                     }
@@ -61,7 +61,7 @@ public class AbaF {
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     dados = new double[n];
-                    for (int i = 0; i < n; i++) {
+                    for (i = 0; i < n; i++) {
                         System.out.print("Digite o valor do dado " +  (i + 1) + ": ");
                         dados[i] = sc.nextDouble();
                     }
@@ -77,7 +77,7 @@ public class AbaF {
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     dados = new double[n];
-                    for (int i = 0; i < n; i++) {
+                    for (i = 0; i < n; i++) {
                         System.out.print("Digite o valor do dado " +  (i + 1) + ": ");
                         dados[i] = sc.nextDouble();
                     }
@@ -93,7 +93,7 @@ public class AbaF {
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     dados = new double[n];
-                    for (int i = 0; i < n; i++) {
+                    for (i = 0; i < n; i++) {
                         System.out.print("Digite o valor do dado " +  (i + 1) + ": ");
                         dados[i] = sc.nextDouble();
                     }
@@ -109,7 +109,7 @@ public class AbaF {
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     dados = new double[n];
-                    for (int i = 0; i < n; i++) {
+                    for (i = 0; i < n; i++) {
                         System.out.print("Digite o valor do dado " +  (i + 1) + ": ");
                         dados[i] = sc.nextDouble();
                     }
@@ -125,7 +125,7 @@ public class AbaF {
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     dados = new double[n];
-                    for (int i = 0; i < n; i++) {
+                    for (i = 0; i < n; i++) {
                         System.out.print("Digite o valor do dado " +  (i + 1) + ": ");
                         dados[i] = sc.nextDouble();
                     }
@@ -141,7 +141,7 @@ public class AbaF {
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     dados = new double[n];
-                    for (int i = 0; i < n; i++) {
+                    for (i = 0; i < n; i++) {
                         System.out.print("Digite o valor do dado " +  (i + 1) + ": ");
                         dados[i] = sc.nextDouble();
                     }
