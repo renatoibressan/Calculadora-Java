@@ -81,7 +81,7 @@ public class MenuPrincipal {
                     AbaF.executarAbaF(sc);
                     break;
                 case 'G':
-                    System.out.print("\nAbrindo a aba F");
+                    System.out.print("\nAbrindo a aba G");
                     Thread.sleep(750);
                     for (char c : load.toCharArray()) {
                         System.out.print(c);
