@@ -38,20 +38,24 @@ public class AbaG {
                         System.out.print("Digite o elemento " + (i + 1) + " do segundo vetor: ");
                         v2[i] = sc.nextDouble();
                     }
-                    resultadoVetor = al.somaVetorial(v1, v2);
-                    casas = new int[n];
-                    for (i = 0; i < n; i++) {
-                        casas[i] = 0;
-                    }
-                    System.out.print("\nv1 + v2 = ");
-                    for (i = 0; i < n; i++) {
-                        if (!MathUtils.inteiroOuNao(resultadoVetor[i])) {
-                            casas[i] = MathUtils.contarCasasDecimais(resultadoVetor[i]);
+                    try {
+                        resultadoVetor = al.somaVetorial(v1, v2);
+                        casas = new int[n];
+                        for (i = 0; i < n; i++) {
+                            casas[i] = 0;
                         }
-                        if (i == 0) System.out.print("[");
-                        if (i > 0) System.out.print(", ");
-                        System.out.print(String.format("%." + casas[i] + "f", resultadoVetor[i]));
-                        if (i == n - 1) System.out.println("]\n");
+                        System.out.print("\nv1 + v2 = ");
+                        for (i = 0; i < n; i++) {
+                            if (!MathUtils.inteiroOuNao(resultadoVetor[i])) {
+                                casas[i] = MathUtils.contarCasasDecimais(resultadoVetor[i]);
+                            }
+                            if (i == 0) System.out.print("[");
+                            if (i > 0) System.out.print(", ");
+                            System.out.print(String.format("%." + casas[i] + "f", resultadoVetor[i]));
+                            if (i == n - 1) System.out.println("]\n");
+                        }
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 46:
@@ -67,9 +71,13 @@ public class AbaG {
                         System.out.print("Digite o elemento " + (i + 1) + " do segundo vetor: ");
                         v2[i] = sc.nextDouble();
                     }
-                    resultadoDouble = al.produtoEscalar(v1, v2);
-                    if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
-                    System.out.println("\n(v1.v2) = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                    try {
+                        resultadoDouble = al.produtoEscalar(v1, v2);
+                        if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
+                        System.out.println("\n(v1.v2) = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 47:
                     System.out.print("\nDigite o tamanho do vetor: ");
@@ -79,9 +87,13 @@ public class AbaG {
                         System.out.print("Digite o elemento " + (i + 1) + " do vetor: ");
                         v[i] = sc.nextDouble();
                     }
-                    resultadoDouble = al.normaVetorial(v);
-                    if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
-                    System.out.println("\n|v| = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                    try {
+                        resultadoDouble = al.normaVetorial(v);
+                        if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
+                        System.out.println("\n|v| = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 48:
                     System.out.print("\nDigite a quantidade de linhas das matrizes: ");
@@ -102,15 +114,20 @@ public class AbaG {
                             B[i][j] = sc.nextInt();
                         }
                     }
-                    resultadoMatriz = al.somaMatricial(A, B);
-                    for (i = 0; i < m; i++) {
-                        for (j = 0; j < n; j++) {
-                            if (j > 0) System.out.print(" ");
-                            System.out.print(resultadoMatriz[i][j]);
+                    try {
+                        resultadoMatriz = al.somaMatricial(A, B);
+                        System.out.println("\nMatriz resultante:");
+                        for (i = 0; i < m; i++) {
+                            for (j = 0; j < n; j++) {
+                                if (j > 0) System.out.print(" ");
+                                System.out.print(resultadoMatriz[i][j]);
+                            }
+                            System.out.print("\n");
                         }
                         System.out.print("\n");
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
                     }
-                    System.out.println("\n");
                     break;
                 case 49:
                     System.out.print("\nDigite a quantidade de linhas da primeira matriz: ");
@@ -133,16 +150,20 @@ public class AbaG {
                             B[i][j] = sc.nextInt();
                         }
                     }
-                    resultadoMatriz = al.produtoMatricial(A, B);
-                    System.out.println("Matriz resultante:");
-                    for (i = 0; i < m; i++) {
-                        for (j = 0; j < p; j++) {
-                            if (j > 0) System.out.print(" ");
-                            System.out.print(resultadoMatriz[i][j]);
+                    try {
+                        resultadoMatriz = al.produtoMatricial(A, B);
+                        System.out.println("\nMatriz resultante:");
+                        for (i = 0; i < m; i++) {
+                            for (j = 0; j < p; j++) {
+                                if (j > 0) System.out.print(" ");
+                                System.out.print(resultadoMatriz[i][j]);
+                            }
+                            System.out.print("\n");
                         }
                         System.out.print("\n");
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
                     }
-                    System.out.println("\n");
                     break;
                 case 50:
                     System.out.print("\nDigite a ordem da matriz: ");
@@ -154,8 +175,12 @@ public class AbaG {
                             M[i][j] = sc.nextInt();
                         }
                     }
-                    resultadoInt = al.determinanteMatricial(M);
-                    System.out.println("\ndet(M) = " + resultadoInt + "\n");
+                    try {
+                        resultadoInt = al.determinanteMatricial(M);
+                        System.out.println("\ndet(M) = " + resultadoInt + "\n");
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 0:
                     System.out.print("\nRetornando ao menu principal");
