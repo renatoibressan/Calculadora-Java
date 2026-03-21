@@ -43,14 +43,16 @@ public class AbaG {
                     for (i = 0; i < n; i++) {
                         casas[i] = 0;
                     }
-                    System.out.print("\nv1 + v2 =");
+                    System.out.print("\nv1 + v2 = ");
                     for (i = 0; i < n; i++) {
                         if (!MathUtils.inteiroOuNao(resultadoVetor[i])) {
                             casas[i] = MathUtils.contarCasasDecimais(resultadoVetor[i]);
                         }
-                        System.out.print(" " + String.format("%." + casas[i] + "f", resultadoVetor[i]));
+                        if (i == 0) System.out.print("[");
+                        if (i > 0) System.out.print(", ");
+                        System.out.print(String.format("%." + casas[i] + "f", resultadoVetor[i]));
+                        if (i == n - 1) System.out.println("]\n");
                     }
-                    System.out.println("\n");
                     break;
                 case 46:
                     System.out.print("\nDigite o tamanho dos vetores: ");
