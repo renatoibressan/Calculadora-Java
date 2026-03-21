@@ -80,6 +80,7 @@ public class AbaG {
                         v[i] = sc.nextDouble();
                     }
                     resultadoDouble = al.normaVetorial(v);
+                    if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                     System.out.println("\n|v| = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                     break;
                 case 48:
