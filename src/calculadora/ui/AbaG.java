@@ -28,6 +28,10 @@ public class AbaG {
                 case 45:
                     System.out.print("\nDigite o tamanho dos vetores: ");
                     n = sc.nextInt();
+                    while (n < 1 || n > 20) {
+                        System.out.print("\nTamanho invalido para os vetores!\nPor favor, tente novamente: ");
+                        n = sc.nextInt();
+                    }
                     v1 = new double[n];
                     for (i = 0; i < n; i++) {
                         System.out.print("Digite o elemento " + (i + 1) + " do primeiro vetor: ");
@@ -46,9 +50,7 @@ public class AbaG {
                         }
                         System.out.print("\nv1 + v2 = ");
                         for (i = 0; i < n; i++) {
-                            if (!MathUtils.inteiroOuNao(resultadoVetor[i])) {
-                                casas[i] = MathUtils.contarCasasDecimais(resultadoVetor[i]);
-                            }
+                            if (!MathUtils.inteiroOuNao(resultadoVetor[i])) casas[i] = MathUtils.contarCasasDecimais(resultadoVetor[i]);
                             if (i == 0) System.out.print("[");
                             if (i > 0) System.out.print(", ");
                             System.out.print(String.format("%." + casas[i] + "f", resultadoVetor[i]));
@@ -61,6 +63,10 @@ public class AbaG {
                 case 46:
                     System.out.print("\nDigite o tamanho dos vetores: ");
                     n = sc.nextInt();
+                    while (n < 1 || n > 20) {
+                        System.out.print("\nTamanho invalido para os vetores!\nPor favor, tente novamente: ");
+                        n = sc.nextInt();
+                    }
                     v1 = new double[n];
                     for (i = 0; i < n; i++) {
                         System.out.print("Digite o elemento " + (i + 1) + " do primeiro vetor: ");
@@ -82,6 +88,10 @@ public class AbaG {
                 case 47:
                     System.out.print("\nDigite o tamanho do vetor: ");
                     n = sc.nextInt();
+                    while (n < 1 || n > 20) {
+                        System.out.print("\nTamanho invalido para o vetor!\nPor favor, tente novamente: ");
+                        n = sc.nextInt();
+                    }
                     v = new double[n];
                     for (i = 0; i < n; i++) {
                         System.out.print("Digite o elemento " + (i + 1) + " do vetor: ");
@@ -98,10 +108,18 @@ public class AbaG {
                 case 48:
                     System.out.print("\nDigite a quantidade de linhas das matrizes: ");
                     m = sc.nextInt();
-                    System.out.print("Digite a quantidade de colunas das matrizes: ");
+                    while (m < 1 || m > 10) {
+                        System.out.print("\nDimensao invalida!\nPor favor, tente novamente: ");
+                        m = sc.nextInt();
+                    }
+                    System.out.print("\nDigite a quantidade de colunas das matrizes: ");
                     n = sc.nextInt();
+                    while (n < 1 || n > 10) {
+                        System.out.print("\nDimensao invalida!\nPor favor, tente novamente: ");
+                        n = sc.nextInt();
+                    }
                     A = new int[m][n];
-                    System.out.println("Digite os elementos da primeira matriz:");
+                    System.out.println("\nDigite os elementos da primeira matriz:");
                     for (i = 0; i < m; i++) {
                         for (j = 0; j < n; j++) {
                             A[i][j] = sc.nextInt();
@@ -116,7 +134,7 @@ public class AbaG {
                     }
                     try {
                         resultadoMatriz = al.somaMatricial(A, B);
-                        System.out.println("\nMatriz resultante:");
+                        System.out.println("\nMatriz resultante:\n");
                         for (i = 0; i < m; i++) {
                             for (j = 0; j < n; j++) {
                                 if (j > 0) System.out.print(" ");
@@ -132,12 +150,24 @@ public class AbaG {
                 case 49:
                     System.out.print("\nDigite a quantidade de linhas da primeira matriz: ");
                     m = sc.nextInt();
-                    System.out.print("Digite a quantidade de colunas da segunda matriz\n(Equivalente a quantidade de linhas da segunda matriz): ");
+                    while (m < 1 || m > 10) {
+                        System.out.print("\nDimensao invalida!\nPor favor, tente novamente: ");
+                        m = sc.nextInt();
+                    }
+                    System.out.print("\nDigite a quantidade de colunas da segunda matriz\n(Equivalente a quantidade de linhas da segunda matriz): ");
                     n = sc.nextInt();
-                    System.out.print("Digite a quantidade de colunas da segunda matriz: ");
+                    while (n < 1 || n > 10) {
+                        System.out.print("\nDimensao invalida!\nPor favor, tente novamente: ");
+                        n = sc.nextInt();
+                    }
+                    System.out.print("\nDigite a quantidade de colunas da segunda matriz: ");
                     p = sc.nextInt();
+                    while (p < 1 || p > 10) {
+                        System.out.print("\nDimensao invalida!\nPor favor, tente novamente: ");
+                        p = sc.nextInt();
+                    }
                     A = new int[m][n];
-                    System.out.println("Digite os elementos da primeira matriz:");
+                    System.out.println("\nDigite os elementos da primeira matriz:");
                     for (i = 0; i < m; i++) {
                         for (j = 0; j < n; j++) {
                             A[i][j] = sc.nextInt();
@@ -152,7 +182,7 @@ public class AbaG {
                     }
                     try {
                         resultadoMatriz = al.produtoMatricial(A, B);
-                        System.out.println("\nMatriz resultante:");
+                        System.out.println("\nMatriz resultante:\n");
                         for (i = 0; i < m; i++) {
                             for (j = 0; j < p; j++) {
                                 if (j > 0) System.out.print(" ");
@@ -168,8 +198,12 @@ public class AbaG {
                 case 50:
                     System.out.print("\nDigite a ordem da matriz: ");
                     n = sc.nextInt();
+                    while (n < 1 || n > 3) {
+                        System.out.print("\nOrdem de matriz invalida!\nPor favor, tente novamente: ");
+                        n = sc.nextInt();
+                    }
                     M = new int[n][n];
-                    System.out.println("Digite os elementos da matriz:");
+                    System.out.println("\nDigite os elementos da matriz:");
                     for (i = 0; i < n; i++) {
                         for (j = 0; j < n; j++) {
                             M[i][j] = sc.nextInt();

@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class AbaF {
     public static void executarAbaF(Scanner sc) throws InterruptedException {
         System.out.println("\n===== ABA F =====\n");
-        int option = -1, casasDecimais, n, i;
+        int option = -1, casasDecimais, n, i, limite = 100;
         double[] dados;
         double resultadoDouble;
         String load = "...";
@@ -28,6 +28,11 @@ public class AbaF {
                 case 37:
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
+                    while (n < 1 || n > limite) {
+                        System.out.print("\nQuantidade de dados invalida!\nPor favor, tente novamente: ");
+                        n = sc.nextInt();
+                    }
+                    System.out.print("\n");
                     dados = new double[n];
                     for (i = 0; i < n; i++) {
                         System.out.print("Digite o valor do dado " +  (i + 1) + ": ");
@@ -44,6 +49,11 @@ public class AbaF {
                 case 38:
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
+                    while (n < 1 || n > limite) {
+                        System.out.print("\nQuantidade de dados invalida!\nPor favor, tente novamente: ");
+                        n = sc.nextInt();
+                    }
+                    System.out.print("\n");
                     dados = new double[n];
                     for (i = 0; i < n; i++) {
                         System.out.print("Digite o valor do dado " +  (i + 1) + ": ");
@@ -60,6 +70,11 @@ public class AbaF {
                 case 39:
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
+                    while (n < 1 || n > limite) {
+                        System.out.print("\nQuantidade de dados invalida!\nPor favor, tente novamente: ");
+                        n = sc.nextInt();
+                    }
+                    System.out.print("\n");
                     dados = new double[n];
                     for (i = 0; i < n; i++) {
                         System.out.print("Digite o valor do dado " +  (i + 1) + ": ");
@@ -76,6 +91,11 @@ public class AbaF {
                 case 40:
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
+                    while (n < 2 || n > limite) {
+                        System.out.print("\nQuantidade de dados invalida!\nPor favor, tente novamente: ");
+                        n = sc.nextInt();
+                    }
+                    System.out.print("\n");
                     dados = new double[n];
                     for (i = 0; i < n; i++) {
                         System.out.print("Digite o valor do dado " +  (i + 1) + ": ");
@@ -92,6 +112,11 @@ public class AbaF {
                 case 41:
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
+                    while (n < 2 || n > limite) {
+                        System.out.print("\nQuantidade de dados invalida!\nPor favor, tente novamente: ");
+                        n = sc.nextInt();
+                    }
+                    System.out.print("\n");
                     dados = new double[n];
                     for (i = 0; i < n; i++) {
                         System.out.print("Digite o valor do dado " +  (i + 1) + ": ");
@@ -108,6 +133,11 @@ public class AbaF {
                 case 42:
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
+                    while (n < 1 || n > limite) {
+                        System.out.print("\nQuantidade de dados invalida!\nPor favor, tente novamente: ");
+                        n = sc.nextInt();
+                    }
+                    System.out.print("\n");
                     dados = new double[n];
                     for (i = 0; i < n; i++) {
                         System.out.print("Digite o valor do dado " +  (i + 1) + ": ");
@@ -124,6 +154,11 @@ public class AbaF {
                 case 43:
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
+                    while (n < 1 || n > limite) {
+                        System.out.print("\nQuantidade de dados invalida!\nPor favor, tente novamente: ");
+                        n = sc.nextInt();
+                    }
+                    System.out.print("\n");
                     dados = new double[n];
                     for (i = 0; i < n; i++) {
                         System.out.print("Digite o valor do dado " +  (i + 1) + ": ");
@@ -140,6 +175,11 @@ public class AbaF {
                 case 44:
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
+                    while (n < 1 || n > limite) {
+                        System.out.print("\nQuantidade de dados invalida!\nPor favor, tente novamente: ");
+                        n = sc.nextInt();
+                    }
+                    System.out.print("\n");
                     dados = new double[n];
                     for (i = 0; i < n; i++) {
                         System.out.print("Digite o valor do dado " +  (i + 1) + ": ");
