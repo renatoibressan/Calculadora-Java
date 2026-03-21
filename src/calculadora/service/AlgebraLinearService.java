@@ -6,6 +6,7 @@ public class AlgebraLinearService {
     public double[] somaVetorial(double[] v1, double[] v2) {
         if (v1 == null || v2 == null) throw new IllegalArgumentException("\nVetor(es) nulo(s)!\n");
         int n1 = v1.length, n2 = v2.length;
+        if (n1 < 1 || n2 < 1) throw new IllegalArgumentException("\nTamanho de vetor(es) invalido(s)!\n");
         if (n1 != n2) throw new IllegalArgumentException("\nVetores devem ser do mesmo tamanho!\n");
         double[] vr = new double[n1];
         for (int i = 0; i < n1; i++) {
@@ -16,6 +17,7 @@ public class AlgebraLinearService {
     public double produtoEscalar(double[] v1, double[] v2) {
         if (v1 == null || v2 == null) throw new IllegalArgumentException("\nVetor(es) nulo(s)!\n");
         int n1 = v1.length, n2 = v2.length;
+        if (n1 < 1 || n2 < 1) throw new IllegalArgumentException("\nTamanho de vetor(es) invalido(s)!\n");
         if (n1 != n2) throw new IllegalArgumentException("\nVetores devem ser do mesmo tamanho!\n");
         double u = 0.0;
         for (int i = 0; i < n1; i++) {
@@ -26,6 +28,7 @@ public class AlgebraLinearService {
     public double normaVetorial(double[] v) {
         if (v == null) throw new IllegalArgumentException("\nVetor nulo!\n");
         int n = v.length;
+        if (n == 0) throw new IllegalArgumentException("\nTamanho de vetor invalido!\n");
         double norma = 0.0;
         for (int i = 0; i < n; i++) {
             norma += Math.pow(v[i], 2);
