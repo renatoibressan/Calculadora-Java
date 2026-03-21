@@ -104,7 +104,7 @@ public class AbaG {
                     }
                     resultadoMatriz = al.somaMatricial(A, B);
                     for (i = 0; i < m; i++) {
-                        for (j = 0; j < n; i++) {
+                        for (j = 0; j < n; j++) {
                             if (j > 0) System.out.print(" ");
                             System.out.print(resultadoMatriz[i][j]);
                         }
@@ -130,13 +130,13 @@ public class AbaG {
                     System.out.println("Digite os elementos da segunda matriz:");
                     for (i = 0; i < n; i++) {
                         for (j = 0; j < p; j++) {
-                            A[i][j] = sc.nextInt();
+                            B[i][j] = sc.nextInt();
                         }
                     }
                     resultadoMatriz = al.produtoMatricial(A, B);
                     System.out.println("Matriz resultante:");
                     for (i = 0; i < m; i++) {
-                        for (j = 0; j < p; i++) {
+                        for (j = 0; j < p; j++) {
                             if (j > 0) System.out.print(" ");
                             System.out.print(resultadoMatriz[i][j]);
                         }

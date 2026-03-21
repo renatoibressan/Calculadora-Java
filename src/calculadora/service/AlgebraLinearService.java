@@ -34,8 +34,10 @@ public class AlgebraLinearService {
     }
     public int[][] somaMatricial(int[][] A, int[][] B) {
         if (A == null || B == null) throw new IllegalArgumentException("\nMatriz(es) nula(s)!\n");
-        int linhasDeA = A.length, colunasDeA = A[0].length;
-        int linhasDeB = B.length, colunasDeB = B[0].length;
+        int linhasDeA = A.length, linhasDeB = B.length;
+        if (linhasDeA < 1 || linhasDeB < 1) throw new IllegalArgumentException("\nMatriz(es) vazia(s)!\n");
+        int colunasDeA = A[0].length, colunasDeB = B[0].length;
+        if (colunasDeA < 1 || colunasDeB < 1) throw new IllegalArgumentException("\nMatriz(es) vazia(s)!\n");
         if (linhasDeA != linhasDeB || colunasDeA != colunasDeB) throw new IllegalArgumentException("\nAs matrizes devem ser de mesma ordem!\n");
         int[][] C = new int[linhasDeA][colunasDeA];
         for (int i = 0; i < linhasDeA; i++) {
@@ -47,15 +49,12 @@ public class AlgebraLinearService {
     }
     public int[][] produtoMatricial(int[][] A, int[][] B) {
         if (A == null || B == null) throw new IllegalArgumentException("\nMatriz(es) nula(s)!\n");
-        int linhasDeA = A.length, colunasDeA = A[0].length;
-        int linhasDeB = B.length, colunasDeB = B[0].length;
+        int linhasDeA = A.length, linhasDeB = B.length;
+        if (linhasDeA < 1 || linhasDeB < 1) throw new IllegalArgumentException("\nMatriz(es) vazia(s)!\n");
+        int colunasDeA = A[0].length, colunasDeB = B[0].length;
+        if (colunasDeA < 1 || colunasDeB < 1) throw new IllegalArgumentException("\nMatriz(es) vazia(s)!\n");
         if (colunasDeA != linhasDeB) throw new IllegalArgumentException("\nAs colunas de A devem ser iguais as linhas de B!\n");
         int[][] C = new int[linhasDeA][colunasDeB];
-        for (int i = 0; i < linhasDeA; i++) {
-            for (int j = 0; j < colunasDeB; j++) {
-                C[i][j] = 0;
-            }
-        }
         for (int i = 0; i < linhasDeA; i++) {
             for (int j = 0; j < colunasDeB; j++) {
                 for (int k = 0; k < colunasDeA; k++) {
@@ -66,10 +65,11 @@ public class AlgebraLinearService {
         return C;
     }
     public int determinanteMatricial(int[][] M) {
-        int i = M.length, j = M[0].length;
-        if (i != j) throw new IllegalArgumentException("\nA matriz deve ser quadrada!\n");
+        int i = M.length;
         if (i < 1) throw new IllegalArgumentException("\nOrdem da matriz invalida!\n");
         if (i > 3) throw new IllegalArgumentException("\nOrdem da matriz nao suportada!\n");
+        int j = M[0].length;
+        if (i != j) throw new IllegalArgumentException("\nA matriz deve ser quadrada!\n");
         if (i == 1) return M[0][0];
         else if (i == 2) return M[0][0] * M[1][1] - M[0][1] * M[1][0];
         else {
