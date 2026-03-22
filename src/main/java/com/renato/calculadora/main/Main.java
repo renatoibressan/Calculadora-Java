@@ -1,5 +1,5 @@
-package calculadora.main;
-import calculadora.ui.MenuPrincipal;
+package com.renato.calculadora.main;
+import com.renato.calculadora.ui.MenuPrincipal;
 import java.util.Locale;
 import java.util.Scanner;
 

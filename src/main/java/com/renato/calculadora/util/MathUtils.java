@@ -1,4 +1,4 @@
-package calculadora.util;
+package com.renato.calculadora.util;
 
 public class MathUtils {
     public static int contarCasasDecimais(double n) {

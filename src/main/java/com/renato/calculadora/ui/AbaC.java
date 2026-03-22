@@ -1,6 +1,6 @@
-package calculadora.ui;
-import calculadora.service.ComparacaoService;
-import calculadora.util.MathUtils;
+package com.renato.calculadora.ui;
+import com.renato.calculadora.service.ComparacaoService;
+import com.renato.calculadora.util.MathUtils;
 import java.util.Scanner;
 
 public class AbaC {

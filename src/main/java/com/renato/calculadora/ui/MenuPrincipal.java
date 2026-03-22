@@ -1,4 +1,4 @@
-package calculadora.ui;
+package com.renato.calculadora.ui;
 import java.util.Scanner;
 
 public class MenuPrincipal {
@@ -97,7 +97,7 @@ public class MenuPrincipal {
                         System.out.print(c);
                         Thread.sleep(150);
                     }
-                    System.out.print("\n");
+                    System.out.println("\n");
                     break;
                 default:
                     System.out.print("\nOpcao " + option + " invalida!\n\nRetornando ao menu principal");

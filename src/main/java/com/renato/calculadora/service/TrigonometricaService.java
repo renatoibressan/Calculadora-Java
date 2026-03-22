@@ -1,5 +1,5 @@
-package calculadora.service;
-import calculadora.util.MathUtils;
+package com.renato.calculadora.service;
+import com.renato.calculadora.util.MathUtils;
 
 public class TrigonometricaService {
     public TrigonometricaService() {

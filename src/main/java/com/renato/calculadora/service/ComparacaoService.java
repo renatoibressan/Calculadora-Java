@@ -1,4 +1,4 @@
-package calculadora.service;
+package com.renato.calculadora.service;
 
 public class ComparacaoService {
     public ComparacaoService() {

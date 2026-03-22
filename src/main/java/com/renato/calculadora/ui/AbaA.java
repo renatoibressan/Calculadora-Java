@@ -1,6 +1,6 @@
-package calculadora.ui;
-import calculadora.service.AritmeticaService;
-import calculadora.util.MathUtils;
+package com.renato.calculadora.ui;
+import com.renato.calculadora.service.AritmeticaService;
+import com.renato.calculadora.util.MathUtils;
 import java.util.Scanner;
 
 public class AbaA {

@@ -1,4 +1,4 @@
-package calculadora.service;
+package com.renato.calculadora.service;
 import java.util.Arrays;
 
 public class EstatisticaService {
