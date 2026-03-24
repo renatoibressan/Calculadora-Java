@@ -127,6 +127,6 @@ public class MenuPrincipal {
                     System.out.print("\n");
                     sc.nextLine();
             }
-        } while (option != '0');
+        } while (option != '1');
     }
 }
