@@ -18,17 +18,17 @@ public class AbaC {
         HistoricoService historico = new HistoricoService("historico.txt");
         TipoOperacao op;
         do {
-            System.out.println("17. Igual a");
-            System.out.println("18. Diferente de");
-            System.out.println("19. Maior que");
-            System.out.println("20. Menor que");
-            System.out.println("21. Maior ou igual a");
-            System.out.println("22. Menor ou igual a");
+            System.out.println("19. Igual a");
+            System.out.println("20. Diferente de");
+            System.out.println("21. Maior que");
+            System.out.println("22. Menor que");
+            System.out.println("23. Maior ou igual a");
+            System.out.println("24. Menor ou igual a");
             System.out.println("0. Retornar ao menu principal");
             System.out.print("\nEscolha uma das opcoes acima: ");
             option = sc.nextInt();
             switch (option) {
-                case 17:
+                case 19:
                     System.out.print("\nDigite um numero para ser comparado: ");
                     a = sc.nextInt();
                     System.out.print("Digite outro numero para comparar ao anterior: ");
@@ -44,7 +44,7 @@ public class AbaC {
                         System.out.println("\nErro ao salvar histórico!\n");
                     }
                     break;
-                case 18:
+                case 20:
                     System.out.print("\nDigite um numero para ser comparado: ");
                     a = sc.nextInt();
                     System.out.print("Digite outro numero para comparar ao anterior: ");
@@ -60,7 +60,7 @@ public class AbaC {
                         System.out.println("\nErro ao salvar histórico!\n");
                     }
                     break;
-                case 19:
+                case 21:
                     System.out.print("\nDigite um numero para ser comparado: ");
                     a = sc.nextInt();
                     System.out.print("Digite outro numero para comparar ao anterior: ");
@@ -76,7 +76,7 @@ public class AbaC {
                         System.out.println("\nErro ao salvar histórico!\n");
                     }
                     break;
-                case 20:
+                case 22:
                    System.out.print("\nDigite um numero para ser comparado: ");
                     a = sc.nextInt();
                     System.out.print("Digite outro numero para comparar ao anterior: ");
@@ -92,7 +92,7 @@ public class AbaC {
                         System.out.println("\nErro ao salvar histórico!\n");
                     }
                     break;
-                case 21:
+                case 23:
                     System.out.print("\nDigite um numero para ser comparado: ");
                     a = sc.nextInt();
                     System.out.print("Digite outro numero para comparar ao anterior: ");
@@ -108,7 +108,7 @@ public class AbaC {
                         System.out.println("\nErro ao salvar histórico!\n");
                     }
                     break;
-                case 22:
+                case 24:
                     System.out.print("\nDigite um numero para ser comparado: ");
                     a = sc.nextInt();
                     System.out.print("Digite outro numero para comparar ao anterior: ");

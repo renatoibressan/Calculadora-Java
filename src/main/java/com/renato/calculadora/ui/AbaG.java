@@ -21,17 +21,17 @@ public class AbaG {
         TipoOperacao op;
         do {
             casasDecimais = 0;
-            System.out.println("45. Soma vetorial");
-            System.out.println("46. Produto escalar");
-            System.out.println("47. Norma vetorial");
-            System.out.println("48. Soma matricial");
-            System.out.println("49. Produto matricial");
-            System.out.println("50. Determinante matricial");
+            System.out.println("49. Soma vetorial");
+            System.out.println("50. Produto escalar");
+            System.out.println("51. Norma vetorial");
+            System.out.println("52. Soma matricial");
+            System.out.println("53. Produto matricial");
+            System.out.println("54. Determinante matricial");
             System.out.println("0. Retornar ao menu principal");
             System.out.print("\nEscolha uma das opcoes acima: ");
             option = sc.nextInt();
             switch (option) {
-                case 45:
+                case 49:
                     System.out.print("\nDigite o tamanho dos vetores: ");
                     n = sc.nextInt();
                     while (n < 1 || n > 20) {
@@ -73,7 +73,7 @@ public class AbaG {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 46:
+                case 50:
                     System.out.print("\nDigite o tamanho dos vetores: ");
                     n = sc.nextInt();
                     while (n < 1 || n > 20) {
@@ -105,7 +105,7 @@ public class AbaG {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 47:
+                case 51:
                     System.out.print("\nDigite o tamanho do vetor: ");
                     n = sc.nextInt();
                     while (n < 1 || n > 20) {
@@ -132,7 +132,7 @@ public class AbaG {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 48:
+                case 52:
                     System.out.print("\nDigite a quantidade de linhas das matrizes: ");
                     m = sc.nextInt();
                     while (m < 1 || m > 10) {
@@ -181,7 +181,7 @@ public class AbaG {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 49:
+                case 53:
                     System.out.print("\nDigite a quantidade de linhas da primeira matriz: ");
                     m = sc.nextInt();
                     while (m < 1 || m > 10) {
@@ -236,7 +236,7 @@ public class AbaG {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 50:
+                case 54:
                     System.out.print("\nDigite a ordem da matriz: ");
                     n = sc.nextInt();
                     while (n < 1 || n > 3) {

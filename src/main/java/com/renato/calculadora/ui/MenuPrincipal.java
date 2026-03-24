@@ -19,8 +19,8 @@ public class MenuPrincipal {
             System.out.println("E. Aba E: operacoes numericas");
             System.out.println("F. Aba F: operacoes estatisticas");
             System.out.println("G. Aba G: operacoes vetoriais/matriciais");
-            System.out.println("0. Carregar histórico");
-            System.out.println("1. Encerrar o programa");
+            System.out.println("0. Encerrar o programa");
+            System.out.println("1. Carregar histórico");
             System.out.print("\nSelecione uma das opcoes acima: ");
             option = Character.toUpperCase(sc.next().charAt(0));
             switch (option) {
@@ -95,6 +95,15 @@ public class MenuPrincipal {
                     AbaG.executarAbaG(sc);
                     break;
                 case '0':
+                    System.out.print("\nEncerrando o programa");
+                    Thread.sleep(750);
+                    for (char c : load.toCharArray()) {
+                        System.out.print(c);
+                        Thread.sleep(150);
+                    }
+                    System.out.println("\n");
+                    break;
+                case '1':
                     System.out.print("\nCarregando o histórico");
                     Thread.sleep(750);
                     for (char c : load.toCharArray()) {
@@ -108,15 +117,6 @@ public class MenuPrincipal {
                         System.out.println("\nErro ao carregar histórico!\n");
                     }
                     break;
-                case '1':
-                    System.out.print("\nEncerrando o programa");
-                    Thread.sleep(750);
-                    for (char c : load.toCharArray()) {
-                        System.out.print(c);
-                        Thread.sleep(150);
-                    }
-                    System.out.println("\n");
-                    break;
                 default:
                     System.out.print("\nOpcao " + option + " invalida!\n\nRetornando ao menu principal");
                     Thread.sleep(750);
@@ -127,6 +127,6 @@ public class MenuPrincipal {
                     System.out.print("\n");
                     sc.nextLine();
             }
-        } while (option != '1');
+        } while (option != '0');
     }
 }

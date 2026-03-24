@@ -10,9 +10,10 @@ import java.util.Scanner;
 public class AbaB {
     public static void executarAbaB(Scanner sc) throws InterruptedException {
         System.out.println("\n===== ABA B =====\n");
-        int option = -1, casasDecimais, n, a, b;
+        int option = -1, casasDecimais, n, a, b, i;
         double a1, razao, resultadoDouble;
         long resultadoLong;
+        long[] resultadoVetor;
         String load = "...", registro;
         SequenciasService seq = new SequenciasService();
         HistoricoService historico = new HistoricoService("historico.txt");
@@ -20,13 +21,15 @@ public class AbaB {
         do {
             casasDecimais = 0;
             System.out.println("9. Fatorial");
-            System.out.println("10. Termo de Fibonacci");
-            System.out.println("11. Somatorio");
-            System.out.println("12. Produtorio");
-            System.out.println("13. Termo de PA");
-            System.out.println("14. Soma de PA");
-            System.out.println("15. Termo de PG");
-            System.out.println("16. Soma de PG");
+            System.out.println("10. Fatorial duplo");
+            System.out.println("11. Termo de Fibonacci");
+            System.out.println("12. Sequencia de Fibonacci");
+            System.out.println("13. Somatorio");
+            System.out.println("14. Produtorio");
+            System.out.println("15. Termo de PA");
+            System.out.println("16. Soma de PA");
+            System.out.println("17. Termo de PG");
+            System.out.println("18. Soma de PG");
             System.out.println("0. Retornar ao menu principal");
             System.out.print("\nEscolha uma das opcoes acima: ");
             option = sc.nextInt();
@@ -52,9 +55,9 @@ public class AbaB {
                     System.out.print("\nDigite um numero natural: ");
                     n = sc.nextInt();
                     try {
-                        resultadoLong = seq.termoFibonacci(n);
-                        System.out.println("\nF" + n + " = " + resultadoLong + "\n");
-                        op = TipoOperacao.FIBONACCI;
+                        resultadoLong = seq.fatorialDuplo(n);
+                        System.out.println("\n" + n + "!! = " + resultadoLong + "\n");
+                        op = TipoOperacao.FATORIAL_DUPLO;
                         registro = op + "; " + FormatUtils.formatar(n) + "; " + FormatUtils.formatar(resultadoLong);
                         try {
                             historico.salvarRegistro(registro);
@@ -66,6 +69,46 @@ public class AbaB {
                     }
                     break;
                 case 11:
+                    System.out.print("\nDigite um numero natural: ");
+                    n = sc.nextInt();
+                    try {
+                        resultadoLong = seq.termoFibonacci(n);
+                        System.out.println("\nF" + n + " = " + resultadoLong + "\n");
+                        op = TipoOperacao.TERMO_FIBONACCI;
+                        registro = op + "; " + FormatUtils.formatar(n) + "; " + FormatUtils.formatar(resultadoLong);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+                case 12:
+                    System.out.print("\nDigite um numero natural: ");
+                    n = sc.nextInt();
+                    try {
+                        resultadoVetor = seq.sequenciaFibonacci(n);
+                        System.out.print("\nSequencia de " + n + " termos: ");
+                        for (i = 0; i < n; i++) {
+                            if (i == 0) System.out.print("[");
+                            if (i > 0) System.out.print(", ");
+                            System.out.print(resultadoVetor[i]);
+                            if (i == n - 1) System.out.println("]\n");
+                        }
+                        op = TipoOperacao.SEQUENCIA_FIBONACCI;
+                        registro = op + "; " + FormatUtils.formatar(n) + "; " + FormatUtils.formatar(resultadoVetor);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+                case 13:
                     System.out.print("\nDigite o limite inferior: ");
                     a = sc.nextInt();
                     System.out.print("Digite o limite superior: ");
@@ -85,7 +128,7 @@ public class AbaB {
                         System.out.println("\nErro ao salvar histórico!\n");
                     }
                     break;
-                case 12:
+                case 14:
                     System.out.print("\nDigite o limite inferior: ");
                     a = sc.nextInt();
                     System.out.print("Digite o limite superior: ");
@@ -105,7 +148,7 @@ public class AbaB {
                         System.out.println("\nErro ao salvar histórico!\n");
                     }
                     break;
-                case 13:
+                case 15:
                     System.out.print("\nDigite o primeiro termo da PA: ");
                     a1 = sc.nextDouble();
                     System.out.print("Digite a razao da PA: ");
@@ -127,7 +170,7 @@ public class AbaB {
                         System.out.println("\n" + e.getMessage() + "\n");
                     }
                     break;
-                case 14:
+                case 16:
                     System.out.print("\nDigite o primeiro termo da PA: ");
                     a1 = sc.nextDouble();
                     System.out.print("Digite a razao da PA: ");
@@ -149,7 +192,7 @@ public class AbaB {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 15:
+                case 17:
                     System.out.print("\nDigite o primeiro termo da PG: ");
                     a1 = sc.nextDouble();
                     System.out.print("Digite a razao da PG: ");
@@ -171,7 +214,7 @@ public class AbaB {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 16:
+                case 18:
                     System.out.print("\nDigite o primeiro termo da PG: ");
                     a1 = sc.nextDouble();
                     System.out.print("Digite a razao da PG: ");

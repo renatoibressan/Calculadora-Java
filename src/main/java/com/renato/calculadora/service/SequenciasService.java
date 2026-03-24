@@ -12,16 +12,38 @@ public class SequenciasService {
         }
         return f;
     }
+    public long fatorialDuplo(int n) {
+        if (n <= 3) throw new IllegalArgumentException("\nValor invalido detectado!\n");
+        long f = 1;
+        for (int i = n; i > 0; i -= 2) {
+            f *= i;
+        }
+        return f;
+    }
     public long termoFibonacci(int n) {
         if (n < 0) throw new IllegalArgumentException("\nTermo invalido detectado!\n");
         if (n == 0 || n == 1) return n;
-        long anterior  = 1, atual = 1, proximo;
+        long anterior = 1, atual = 1, proximo;
         for (int i = 2; i <= n; i++) {
             proximo = anterior + atual;
             anterior = atual;
             atual = proximo;
         }
         return atual;
+    }
+    public long[] sequenciaFibonacci(int n) {
+        if (n <= 0) throw new IllegalArgumentException("\nTermo invalido detectado!\n");
+        long[] v = new long[n];
+        long anterior = 0, atual = 1, proximo;
+        int idx = 0;
+        for (int i = 1; i <= n; i++) {
+            v[idx] = anterior;
+            idx++;
+            proximo = anterior + atual;
+            anterior = atual;
+            atual = proximo;
+        }
+        return v;
     }
     public long somatorio(int a, int b) {
         long s = 0;

@@ -19,21 +19,21 @@ public class AbaD {
         do {
             f = 0;
             casasDecimais = 0;
-            System.out.println("23. Valor em radianos");
-            System.out.println("24. Seno");
-            System.out.println("25. Cosseno");
-            System.out.println("26. Tangente");
-            System.out.println("27. Arco seno");
-            System.out.println("28. Arco cosseno");
-            System.out.println("29. Arco tangente");
-            System.out.println("30. Secante");
-            System.out.println("31. Cossecante");
-            System.out.println("32. Cotangente");
+            System.out.println("25. Valor em radianos");
+            System.out.println("26. Seno");
+            System.out.println("27. Cosseno");
+            System.out.println("28. Tangente");
+            System.out.println("29. Arco seno");
+            System.out.println("30. Arco cosseno");
+            System.out.println("31. Arco tangente");
+            System.out.println("32. Secante");
+            System.out.println("33. Cossecante");
+            System.out.println("34. Cotangente");
             System.out.println("0. Retornar ao menu principal");
             System.out.print("\nEscolha uma das opcoes acima: ");
             option = sc.nextInt();
             switch (option) {
-                case 23:
+                case 25:
                     System.out.print("\nDigite o valor do angulo: ");
                     x = sc.nextDouble();
                     resultadoDouble = trig.valorRadianos(x);
@@ -48,7 +48,7 @@ public class AbaD {
                         System.out.println("\nErro ao salvar histórico!\n");
                     }
                     break;
-                case 24:
+                case 26:
                     System.out.print("\nDigite o valor do angulo: ");
                     x = sc.nextDouble();
                     resultadoDouble = trig.seno(x);
@@ -63,7 +63,7 @@ public class AbaD {
                         System.out.println("\nErro ao salvar histórico!\n");
                     }
                     break;
-                case 25:
+                case 27:
                     System.out.print("\nDigite o valor do angulo: ");
                     x = sc.nextDouble();
                     resultadoDouble = trig.cosseno(x);
@@ -78,7 +78,7 @@ public class AbaD {
                         System.out.println("\nErro ao salvar histórico!\n");
                     }
                     break;
-                case 26:
+                case 28:
                     System.out.print("\nDigite o valor do angulo: ");
                     x = sc.nextDouble();
                     try {
@@ -97,7 +97,7 @@ public class AbaD {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 27:
+                case 29:
                     System.out.print("\nDigite o valor da razao: ");
                     razao = sc.nextDouble();
                     try {
@@ -116,7 +116,7 @@ public class AbaD {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 28:
+                case 30:
                     System.out.print("\nDigite o valor da razao: ");
                     razao = sc.nextDouble();
                     try {
@@ -135,7 +135,7 @@ public class AbaD {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 29:
+                case 31:
                     System.out.print("\nDigite o valor da razao: ");
                     razao = sc.nextDouble();
                     try {
@@ -154,7 +154,7 @@ public class AbaD {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 30:
+                case 32:
                     System.out.print("\nDigite o valor do angulo: ");
                     x = sc.nextDouble();
                     try {
@@ -173,7 +173,7 @@ public class AbaD {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 31:
+                case 33:
                     System.out.print("\nDigite o valor do angulo: ");
                     x = sc.nextDouble();
                     try {
@@ -192,7 +192,7 @@ public class AbaD {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 32:
+                case 34:
                     System.out.print("\nDigite o valor do angulo: ");
                     x = sc.nextDouble();
                     try {

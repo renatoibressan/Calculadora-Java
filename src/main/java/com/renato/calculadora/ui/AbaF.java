@@ -19,19 +19,19 @@ public class AbaF {
         TipoOperacao op;
         do {
             casasDecimais = 0;
-            System.out.println("37. Media");
-            System.out.println("38. Moda");
-            System.out.println("39. Mediana");
-            System.out.println("40. Variancia");
-            System.out.println("41. Desvio padrao");
-            System.out.println("42. Maior dado");
-            System.out.println("43. Menor dado");
-            System.out.println("44. Amplitude");
+            System.out.println("41. Media");
+            System.out.println("42. Moda");
+            System.out.println("43. Mediana");
+            System.out.println("44. Variancia");
+            System.out.println("45. Desvio padrao");
+            System.out.println("46. Maior dado");
+            System.out.println("47. Menor dado");
+            System.out.println("48. Amplitude");
             System.out.println("0. Retornar ao menu principal");
             System.out.print("\nEscolha uma das opcoes acima: ");
             option = sc.nextInt();
             switch (option) {
-                case 37:
+                case 41:
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     while (n < 1 || n > limite) {
@@ -59,7 +59,7 @@ public class AbaF {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 38:
+                case 42:
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     while (n < 1 || n > limite) {
@@ -87,7 +87,7 @@ public class AbaF {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 39:
+                case 43:
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     while (n < 1 || n > limite) {
@@ -115,7 +115,7 @@ public class AbaF {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 40:
+                case 44:
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     while (n < 2 || n > limite) {
@@ -143,7 +143,7 @@ public class AbaF {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 41:
+                case 45:
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     while (n < 2 || n > limite) {
@@ -171,7 +171,7 @@ public class AbaF {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 42:
+                case 46:
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     while (n < 1 || n > limite) {
@@ -199,7 +199,7 @@ public class AbaF {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 43:
+                case 47:
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     while (n < 1 || n > limite) {
@@ -227,7 +227,7 @@ public class AbaF {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 44:
+                case 48:
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     while (n < 1 || n > limite) {

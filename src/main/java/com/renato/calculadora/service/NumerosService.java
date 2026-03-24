@@ -23,6 +23,10 @@ public class NumerosService {
         }
         return true;
     }
+    public boolean divisivelOuNao(int a, int b) {
+        if (b == 0) throw new ArithmeticException("\nDivisao por zero detectada!\n");
+        return a % b == 0;
+    }
     public int quantidadeDivisores(int n) {
         if (n == 0) throw new ArithmeticException("\nQuantidade infinita de divisores!\n");
         int count = 0;
@@ -31,5 +35,18 @@ public class NumerosService {
             if (n % i == 0) count += (i * i == n) ? 1 : 2;
         }
         return count;
+    }
+    public int[] divisores(int n) {
+        if (n == 0) throw new ArithmeticException("\nQuantidade infinita de divisores!\n");
+        n = Math.abs(n);
+        int[] v = new int[quantidadeDivisores(n)];
+        int idx = 0;
+        for (int i = 1; (i * i) <= n; i++) {
+            if (n % i == 0) {
+                v[idx++] = i;
+                if (i != n / i) v[idx++] = n / i;
+            }
+        }
+        return v;
     }
 }
