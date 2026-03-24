@@ -1,6 +1,10 @@
 package com.renato.calculadora.ui;
+import com.renato.calculadora.io.HistoricoService;
+import com.renato.calculadora.model.TipoOperacao;
 import com.renato.calculadora.service.ComparacaoService;
-import com.renato.calculadora.util.MathUtils;
+import com.renato.calculadora.util.*;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class AbaC {
@@ -9,8 +13,10 @@ public class AbaC {
         int option = -1, a, b;
         boolean resultadoBoolean;
         String afirmacao;
-        String load = "...";
+        String load = "...", registro;
         ComparacaoService comp = new ComparacaoService();
+        HistoricoService historico = new HistoricoService("historico.txt");
+        TipoOperacao op;
         do {
             System.out.println("17. Igual a");
             System.out.println("18. Diferente de");
@@ -30,6 +36,13 @@ public class AbaC {
                     resultadoBoolean = comp.igualA(a, b);
                     afirmacao = MathUtils.verdadeiroOuFalso(resultadoBoolean);
                     System.out.println("\n" + a + " == " + b + ": " + afirmacao + "\n");
+                    op = TipoOperacao.IGUAL;
+                    registro = op + "; " + FormatUtils.formatar(a) + "; " + FormatUtils.formatar(b) + "; " + FormatUtils.formatar(resultadoBoolean);
+                    try {
+                        historico.salvarRegistro(registro);
+                    } catch (IOException e) {
+                        System.out.println("\nErro ao salvar histórico!\n");
+                    }
                     break;
                 case 18:
                     System.out.print("\nDigite um numero para ser comparado: ");
@@ -39,6 +52,13 @@ public class AbaC {
                     resultadoBoolean = comp.diferenteDe(a, b);
                     afirmacao = MathUtils.verdadeiroOuFalso(resultadoBoolean);
                     System.out.println("\n" + a + " != " + b + ": " + afirmacao + "\n");
+                    op = TipoOperacao.DIFERENTE;
+                    registro = op + "; " + FormatUtils.formatar(a) + "; " + FormatUtils.formatar(b) + "; " + FormatUtils.formatar(resultadoBoolean);
+                    try {
+                        historico.salvarRegistro(registro);
+                    } catch (IOException e) {
+                        System.out.println("\nErro ao salvar histórico!\n");
+                    }
                     break;
                 case 19:
                     System.out.print("\nDigite um numero para ser comparado: ");
@@ -48,6 +68,13 @@ public class AbaC {
                     resultadoBoolean = comp.maiorQue(a, b);
                     afirmacao = MathUtils.verdadeiroOuFalso(resultadoBoolean);
                     System.out.println("\n" + a + " > " + b + ": " + afirmacao + "\n");
+                    op = TipoOperacao.MAIOR;
+                    registro = op + "; " + FormatUtils.formatar(a) + "; " + FormatUtils.formatar(b) + "; " + FormatUtils.formatar(resultadoBoolean);
+                    try {
+                        historico.salvarRegistro(registro);
+                    } catch (IOException e) {
+                        System.out.println("\nErro ao salvar histórico!\n");
+                    }
                     break;
                 case 20:
                    System.out.print("\nDigite um numero para ser comparado: ");
@@ -57,6 +84,13 @@ public class AbaC {
                     resultadoBoolean = comp.menorQue(a, b);
                     afirmacao = MathUtils.verdadeiroOuFalso(resultadoBoolean);
                     System.out.println("\n" + a + " < " + b + ": " + afirmacao + "\n");
+                    op = TipoOperacao.MENOR;
+                    registro = op + "; " + FormatUtils.formatar(a) + "; " + FormatUtils.formatar(b) + "; " + FormatUtils.formatar(resultadoBoolean);
+                    try {
+                        historico.salvarRegistro(registro);
+                    } catch (IOException e) {
+                        System.out.println("\nErro ao salvar histórico!\n");
+                    }
                     break;
                 case 21:
                     System.out.print("\nDigite um numero para ser comparado: ");
@@ -66,6 +100,13 @@ public class AbaC {
                     resultadoBoolean = comp.maiorOuIgualA(a, b);
                     afirmacao = MathUtils.verdadeiroOuFalso(resultadoBoolean);
                     System.out.println("\n" + a + " >= " + b + ": " + afirmacao + "\n");
+                    op = TipoOperacao.MAIOR_OU_IGUAL;
+                    registro = op + "; " + FormatUtils.formatar(a) + "; " + FormatUtils.formatar(b) + "; " + FormatUtils.formatar(resultadoBoolean);
+                    try {
+                        historico.salvarRegistro(registro);
+                    } catch (IOException e) {
+                        System.out.println("\nErro ao salvar histórico!\n");
+                    }
                     break;
                 case 22:
                     System.out.print("\nDigite um numero para ser comparado: ");
@@ -75,6 +116,13 @@ public class AbaC {
                     resultadoBoolean = comp.menorOuIgualA(a, b);
                     afirmacao = MathUtils.verdadeiroOuFalso(resultadoBoolean);
                     System.out.println("\n" + a + " <= " + b + ": " + afirmacao + "\n");
+                    op = TipoOperacao.MENOR_OU_IGUAL;
+                    registro = op + "; " + FormatUtils.formatar(a) + "; " + FormatUtils.formatar(b) + "; " + FormatUtils.formatar(resultadoBoolean);
+                    try {
+                        historico.salvarRegistro(registro);
+                    } catch (IOException e) {
+                        System.out.println("\nErro ao salvar histórico!\n");
+                    }
                     break;
                 case 0:
                     System.out.print("\nRetornando ao menu principal");

@@ -1,6 +1,10 @@
 package com.renato.calculadora.ui;
+import com.renato.calculadora.io.HistoricoService;
+import com.renato.calculadora.model.TipoOperacao;
 import com.renato.calculadora.service.AlgebraLinearService;
-import com.renato.calculadora.util.MathUtils;
+import com.renato.calculadora.util.*;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class AbaG {
@@ -11,8 +15,10 @@ public class AbaG {
         double resultadoDouble;
         double[] v, v1, v2, resultadoVetor;
         int[][] M, A, B, resultadoMatriz;
-        String load = "...";
+        String load = "...", registro;
         AlgebraLinearService al = new AlgebraLinearService();
+        HistoricoService historico = new HistoricoService("historico.txt");
+        TipoOperacao op;
         do {
             casasDecimais = 0;
             System.out.println("45. Soma vetorial");
@@ -56,6 +62,13 @@ public class AbaG {
                             System.out.print(String.format("%." + casas[i] + "f", resultadoVetor[i]));
                             if (i == n - 1) System.out.println("]\n");
                         }
+                        op = TipoOperacao.SOMA_VETOR;
+                        registro = op + "; " + FormatUtils.formatar(v1) + "; " + FormatUtils.formatar(v2) + "; " + FormatUtils.formatar(resultadoVetor);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
@@ -81,6 +94,13 @@ public class AbaG {
                         resultadoDouble = al.produtoEscalar(v1, v2);
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\n(v1.v2) = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        op = TipoOperacao.PRODUTO_ESCALAR;
+                        registro = op + "; " + FormatUtils.formatar(v1) + "; " + FormatUtils.formatar(v2) + "; " + FormatUtils.formatar(resultadoDouble);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
@@ -101,6 +121,13 @@ public class AbaG {
                         resultadoDouble = al.normaVetorial(v);
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\n|v| = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        op = TipoOperacao.NORMA;
+                        registro = op + "; " + FormatUtils.formatar(v) + "; " + FormatUtils.formatar(resultadoDouble);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
@@ -143,6 +170,13 @@ public class AbaG {
                             System.out.print("\n");
                         }
                         System.out.print("\n");
+                        op = TipoOperacao.SOMA_MATRIZ;
+                        registro = op + "; " + FormatUtils.formatar(A) + "; " + FormatUtils.formatar(B) + "; " + FormatUtils.formatar(resultadoMatriz);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
@@ -191,6 +225,13 @@ public class AbaG {
                             System.out.print("\n");
                         }
                         System.out.print("\n");
+                        op = TipoOperacao.PRODUTO_MATRIZ;
+                        registro = op + "; " + FormatUtils.formatar(A) + "; " + FormatUtils.formatar(B) + "; " + FormatUtils.formatar(resultadoMatriz);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
@@ -212,6 +253,13 @@ public class AbaG {
                     try {
                         resultadoInt = al.determinanteMatricial(M);
                         System.out.println("\ndet(M) = " + resultadoInt + "\n");
+                        op = TipoOperacao.DETERMINANTE;
+                        registro = op + "; " + FormatUtils.formatar(M) + "; " + FormatUtils.formatar(resultadoInt);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }

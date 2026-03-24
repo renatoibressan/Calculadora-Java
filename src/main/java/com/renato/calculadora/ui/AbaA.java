@@ -1,6 +1,10 @@
 package com.renato.calculadora.ui;
+import com.renato.calculadora.io.HistoricoService;
+import com.renato.calculadora.model.TipoOperacao;
 import com.renato.calculadora.service.AritmeticaService;
-import com.renato.calculadora.util.MathUtils;
+import com.renato.calculadora.util.*;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class AbaA {
@@ -8,8 +12,10 @@ public class AbaA {
         System.out.println("\n===== ABA A =====\n");
         int option = -1, casasDecimais, f, a, b, n, resultadoInt;
         double m, resultadoDouble;
-        String load = "...";
+        String load = "...", registro;
         AritmeticaService arit = new AritmeticaService();
+        HistoricoService historico = new HistoricoService("historico.txt");
+        TipoOperacao op;
         do {
             f = 0;
             casasDecimais = 0;
@@ -32,6 +38,13 @@ public class AbaA {
                     b = sc.nextInt();
                     resultadoInt = arit.adicao(a, b);
                     System.out.println("\n" + a + " + " + b + " = " + resultadoInt + "\n");
+                    op = TipoOperacao.ADICAO;
+                    registro = op + "; " + FormatUtils.formatar(a) + "; " + FormatUtils.formatar(b) + "; " + FormatUtils.formatar(resultadoInt);
+                    try {
+                        historico.salvarRegistro(registro);
+                    } catch (IOException e) {
+                        System.out.println("\nErro ao salvar histórico!\n");
+                    }
                     break;
                 case 2:
                     System.out.print("\nDigite o minuendo: ");
@@ -40,6 +53,13 @@ public class AbaA {
                     b = sc.nextInt();
                     resultadoInt = arit.subtracao(a, b);
                     System.out.println("\n" + a + " - " + b + " = " + resultadoInt + "\n");
+                    op = TipoOperacao.SUBTRACAO;
+                    registro = op + "; " + FormatUtils.formatar(a) + "; " + FormatUtils.formatar(b) + "; " + FormatUtils.formatar(resultadoInt);
+                    try {
+                        historico.salvarRegistro(registro);
+                    } catch (IOException e) {
+                        System.out.println("\nErro ao salvar histórico!\n");
+                    }
                     break;
                 case 3:
                     System.out.print("\nDigite o primeiro fator: ");
@@ -48,6 +68,13 @@ public class AbaA {
                     b = sc.nextInt();
                     resultadoInt = arit.multiplicacao(a, b);
                     System.out.println("\n" + a + " * " + b + " = " + resultadoInt + "\n");
+                    op = TipoOperacao.MULTIPLICACAO;
+                    registro = op + "; " + FormatUtils.formatar(a) + "; " + FormatUtils.formatar(b) + "; " + FormatUtils.formatar(resultadoInt);
+                    try {
+                        historico.salvarRegistro(registro);
+                    } catch (IOException e) {
+                        System.out.println("\nErro ao salvar histórico!\n");
+                    }
                     break;
                 case 4:
                     System.out.print("\nDigite o dividendo: ");
@@ -58,6 +85,13 @@ public class AbaA {
                         resultadoDouble = arit.divisao(a, b);
                         if (a % b != 0) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\n" + a + " / " + b + " = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        op = TipoOperacao.DIVISAO;
+                        registro = op + "; " + FormatUtils.formatar(a) + "; " + FormatUtils.formatar(b) + "; " + FormatUtils.formatar(resultadoDouble);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (ArithmeticException e) {
                         System.out.println(e.getMessage());
                     }
@@ -70,6 +104,13 @@ public class AbaA {
                     try {
                         resultadoInt = arit.resto(a, b);
                         System.out.println("\n" + a + " % " + b + " = " + resultadoInt + "\n");
+                        op = TipoOperacao.RESTO;
+                        registro = op + "; " + FormatUtils.formatar(a) + "; " + FormatUtils.formatar(b) + "; " + FormatUtils.formatar(resultadoInt);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (ArithmeticException e) {
                         System.out.println(e.getMessage());
                     }
@@ -83,6 +124,13 @@ public class AbaA {
                         resultadoDouble = arit.potenciacao(a, b);
                         if (b < 0) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\n" + a + " ^ " + b + " = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        op = TipoOperacao.POTENCIACAO;
+                        registro = op + "; " + FormatUtils.formatar(a) + "; " + FormatUtils.formatar(b) + "; " + FormatUtils.formatar(resultadoDouble);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (ArithmeticException e) {
                         System.out.println(e.getMessage());
                     }
@@ -95,6 +143,13 @@ public class AbaA {
                         if (!MathUtils.inteiroOuNao(m)) f = MathUtils.contarCasasDecimais(m);
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\n" + String.format("%." + f + "f", m) + " ^ 1/2 = " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        op = TipoOperacao.RAIZ_QUADRADA;
+                        registro = op + "; " + FormatUtils.formatar(m) + "; " + FormatUtils.formatar(resultadoDouble);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (ArithmeticException e) {
                         System.out.println(e.getMessage());
                     }
@@ -104,6 +159,13 @@ public class AbaA {
                     n = sc.nextInt();
                     resultadoInt = arit.modulo(n);
                     System.out.println("\n|" + n + "| = " + resultadoInt + "\n");
+                    op = TipoOperacao.MODULO;
+                    registro = op + "; " + FormatUtils.formatar(n) + "; " + FormatUtils.formatar(resultadoInt);
+                    try {
+                        historico.salvarRegistro(registro);
+                    } catch (IOException e) {
+                        System.out.println("\nErro ao salvar histórico!\n");
+                    }
                     break;
                 case 0:
                     System.out.print("\nRetornando ao menu principal");

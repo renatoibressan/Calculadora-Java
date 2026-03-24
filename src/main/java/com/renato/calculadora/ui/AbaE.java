@@ -1,6 +1,10 @@
 package com.renato.calculadora.ui;
+import com.renato.calculadora.io.HistoricoService;
+import com.renato.calculadora.model.TipoOperacao;
 import com.renato.calculadora.service.NumerosService;
-import com.renato.calculadora.util.MathUtils;
+import com.renato.calculadora.util.*;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class AbaE {
@@ -9,8 +13,10 @@ public class AbaE {
         int option = -1, n, a, b, resultadoInt;
         boolean resultadoBoolean;
         String afirmacao;
-        String load = "...";
+        String load = "...", registro;
         NumerosService num = new NumerosService();
+        HistoricoService historico = new HistoricoService("historico.txt");
+        TipoOperacao op;
         do {
             System.out.println("33. MDC");
             System.out.println("34. MMC");
@@ -34,6 +40,13 @@ public class AbaE {
                     }
                     resultadoInt = num.mdc(a, b);
                     System.out.println("\nMDC de " + a + " e " + b + ": " + resultadoInt + "\n");
+                    op = TipoOperacao.MDC;
+                    registro = op + "; " + FormatUtils.formatar(a) + "; " + FormatUtils.formatar(b) + "; " + FormatUtils.formatar(resultadoInt);
+                    try {
+                        historico.salvarRegistro(registro);
+                    } catch (IOException e) {
+                        System.out.println("\nErro ao salvar histórico!\n");
+                    }
                     break;
                 case 34:
                     System.out.print("\nDigite o primeiro numero: ");
@@ -49,6 +62,13 @@ public class AbaE {
                     }
                     resultadoInt = num.mmc(a, b);
                     System.out.println("\nMMC de " + a + " e " + b + ": " + resultadoInt + "\n");
+                    op = TipoOperacao.MMC;
+                    registro = op + "; " + FormatUtils.formatar(a) + "; " + FormatUtils.formatar(b) + "; " + FormatUtils.formatar(resultadoInt);
+                    try {
+                        historico.salvarRegistro(registro);
+                    } catch (IOException e) {
+                        System.out.println("\nErro ao salvar histórico!\n");
+                    }
                     break;
                 case 35:
                     System.out.print("\nDigite um numero natural: ");
@@ -57,6 +77,13 @@ public class AbaE {
                         resultadoBoolean = num.primoOuNao(n);
                         afirmacao = MathUtils.primoOuNao(resultadoBoolean);
                         System.out.println("\n" + n + ": numero " + afirmacao + "\n");
+                        op = TipoOperacao.PRIMO;
+                        registro = op + "; " + FormatUtils.formatar(n) + "; " + FormatUtils.formatar(resultadoBoolean);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (ArithmeticException e) {
                         System.out.println(e.getMessage());
                     }
@@ -67,6 +94,13 @@ public class AbaE {
                     try {
                         resultadoInt = num.quantidadeDivisores(n);
                         System.out.println("\n" + n + " possui " + resultadoInt + " divisores\n");
+                        op = TipoOperacao.DIVISORES;
+                        registro = op + "; " + FormatUtils.formatar(n) + "; " + FormatUtils.formatar(resultadoInt);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (ArithmeticException e) {
                         System.out.println(e.getMessage());
                     }

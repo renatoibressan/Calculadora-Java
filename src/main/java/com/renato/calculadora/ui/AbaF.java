@@ -1,6 +1,10 @@
 package com.renato.calculadora.ui;
+import com.renato.calculadora.io.HistoricoService;
+import com.renato.calculadora.model.TipoOperacao;
 import com.renato.calculadora.service.EstatisticaService;
-import com.renato.calculadora.util.MathUtils;
+import com.renato.calculadora.util.*;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class AbaF {
@@ -9,8 +13,10 @@ public class AbaF {
         int option = -1, casasDecimais, n, i, limite = 100;
         double[] dados;
         double resultadoDouble;
-        String load = "...";
+        String load = "...", registro;
         EstatisticaService stats = new EstatisticaService();
+        HistoricoService historico = new HistoricoService("historico.txt");
+        TipoOperacao op;
         do {
             casasDecimais = 0;
             System.out.println("37. Media");
@@ -42,6 +48,13 @@ public class AbaF {
                         resultadoDouble = stats.media(dados);
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\nMedia: " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        op = TipoOperacao.MEDIA;
+                        registro = op + "; " + FormatUtils.formatar(dados) + "; " + FormatUtils.formatar(resultadoDouble);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
@@ -63,6 +76,13 @@ public class AbaF {
                         resultadoDouble = stats.moda(dados);
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\nModa: " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        op = TipoOperacao.MODA;
+                        registro = op + "; " + FormatUtils.formatar(dados) + "; " + FormatUtils.formatar(resultadoDouble);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
@@ -84,6 +104,13 @@ public class AbaF {
                         resultadoDouble = stats.mediana(dados);
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\nMediana: " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        op = TipoOperacao.MEDIANA;
+                        registro = op + "; " + FormatUtils.formatar(dados) + "; " + FormatUtils.formatar(resultadoDouble);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
@@ -105,6 +132,13 @@ public class AbaF {
                         resultadoDouble = stats.variancia(dados);
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\nVariancia: " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        op = TipoOperacao.VARIANCIA;
+                        registro = op + "; " + FormatUtils.formatar(dados) + "; " + FormatUtils.formatar(resultadoDouble);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
@@ -126,6 +160,13 @@ public class AbaF {
                         resultadoDouble = stats.desvioPadrao(dados);
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\nDesvio padrao: " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        op = TipoOperacao.DESVIO_PADRAO;
+                        registro = op + "; " + FormatUtils.formatar(dados) + "; " + FormatUtils.formatar(resultadoDouble);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
@@ -147,6 +188,13 @@ public class AbaF {
                         resultadoDouble = stats.maiorDado(dados);
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\nMaior dado: " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        op = TipoOperacao.MAIOR_DADO;
+                        registro = op + "; " + FormatUtils.formatar(dados) + "; " + FormatUtils.formatar(resultadoDouble);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
@@ -168,6 +216,13 @@ public class AbaF {
                         resultadoDouble = stats.menorDado(dados);
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\nMenor dado: " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        op = TipoOperacao.MENOR_DADO;
+                        registro = op + "; " + FormatUtils.formatar(dados) + "; " + FormatUtils.formatar(resultadoDouble);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
@@ -189,6 +244,13 @@ public class AbaF {
                         resultadoDouble = stats.amplitude(dados);
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
                         System.out.println("\nAmplitude: " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        op = TipoOperacao.AMPLITUDE;
+                        registro = op + "; " + FormatUtils.formatar(dados) + "; " + FormatUtils.formatar(resultadoDouble);
+                        try {
+                            historico.salvarRegistro(registro);
+                        } catch (IOException e) {
+                            System.out.println("\nErro ao salvar histórico!\n");
+                        }
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
