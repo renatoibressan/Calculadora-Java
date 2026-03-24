@@ -12,6 +12,13 @@ public class HistoricoService {
             writer.newLine();
         }
     }
-    // public void carregarHistorico() throws IOException {
-    // }
+     public void carregarHistorico() throws IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(caminhoArquivo))) {
+            String linha;
+            while ((linha = reader.readLine()) != null) {
+                System.out.println("\n" + linha + "\n");
+                System.out.println("--------------------------------------------------------------");
+            }
+        }
+    }
 }
