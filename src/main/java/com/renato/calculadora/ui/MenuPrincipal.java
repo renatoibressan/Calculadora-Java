@@ -20,7 +20,8 @@ public class MenuPrincipal {
             System.out.println("F. Aba F: operacoes estatisticas");
             System.out.println("G. Aba G: operacoes vetoriais/matriciais");
             System.out.println("0. Encerrar o programa");
-            System.out.println("1. Carregar histórico");
+            System.out.println("1. Carregar historico");
+            System.out.println("2. Limpar historico");
             System.out.print("\nSelecione uma das opcoes acima: ");
             option = Character.toUpperCase(sc.next().charAt(0));
             switch (option) {
@@ -115,6 +116,21 @@ public class MenuPrincipal {
                         historico.carregarHistorico();
                     } catch (IOException e) {
                         System.out.println("\nErro ao carregar histórico!\n");
+                    }
+                    break;
+                case '2':
+                    System.out.print("\nLimpando o histórico");
+                    Thread.sleep(750);
+                    for (char c : load.toCharArray()) {
+                        System.out.print(c);
+                        Thread.sleep(150);
+                    }
+                    System.out.println("\n");
+                    try {
+                        historico.limparHistorico();
+                        System.out.println("\nHistorico limpo com sucesso!\n");
+                    } catch (IOException e) {
+                        System.out.println("\nErro ao limpar histórico!\n");
                     }
                     break;
                 default:
