@@ -19,6 +19,7 @@ public class MenuPrincipal {
             System.out.println("E. Aba E: operações numéricas");
             System.out.println("F. Aba F: operações estatísticas");
             System.out.println("G. Aba G: operações vetoriais/matriciais");
+            System.out.println("H. Aba H: conversões de medidas/temperaturas");
             System.out.println("0. Encerrar o programa");
             System.out.println("1. Carregar histórico");
             System.out.println("2. Limpar histórico");
@@ -94,6 +95,16 @@ public class MenuPrincipal {
                     }
                     System.out.print("\n");
                     AbaG.executarAbaG(sc);
+                    break;
+                case 'H':
+                    System.out.print("\nAbrindo a aba H");
+                    Thread.sleep(750);
+                    for (char c : load.toCharArray()) {
+                        System.out.print(c);
+                        Thread.sleep(150);
+                    }
+                    System.out.print("\n");
+                    AbaH.executarAbaH(sc);
                     break;
                 case '0':
                     System.out.print("\nEncerrando o programa");
