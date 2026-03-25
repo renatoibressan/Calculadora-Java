@@ -1,11 +1,14 @@
 com/renato/calculadora/ui/AbaD.class
 com/renato/calculadora/service/EstatisticaService.class
 com/renato/calculadora/ui/MenuPrincipal.class
+com/renato/calculadora/model/TipoOperacao.class
 com/renato/calculadora/ui/AbaC.class
 com/renato/calculadora/service/TrigonometricaService.class
 com/renato/calculadora/service/AritmeticaService.class
+com/renato/calculadora/util/FormatUtils.class
 com/renato/calculadora/service/NumerosService.class
 com/renato/calculadora/ui/AbaG.class
+com/renato/calculadora/io/HistoricoService.class
 com/renato/calculadora/util/MathUtils.class
 com/renato/calculadora/ui/AbaB.class
 com/renato/calculadora/service/ComparacaoService.class

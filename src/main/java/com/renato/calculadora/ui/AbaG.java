@@ -28,14 +28,14 @@ public class AbaG {
             System.out.println("53. Produto matricial");
             System.out.println("54. Determinante matricial");
             System.out.println("0. Retornar ao menu principal");
-            System.out.print("\nEscolha uma das opcoes acima: ");
+            System.out.print("\nEscolha uma das opções acima: ");
             option = sc.nextInt();
             switch (option) {
                 case 49:
                     System.out.print("\nDigite o tamanho dos vetores: ");
                     n = sc.nextInt();
                     while (n < 1 || n > 20) {
-                        System.out.print("\nTamanho invalido para os vetores!\nPor favor, tente novamente: ");
+                        System.out.print("\nTamanho inválido para os vetores!\nPor favor, tente novamente: ");
                         n = sc.nextInt();
                     }
                     v1 = new double[n];
@@ -77,7 +77,7 @@ public class AbaG {
                     System.out.print("\nDigite o tamanho dos vetores: ");
                     n = sc.nextInt();
                     while (n < 1 || n > 20) {
-                        System.out.print("\nTamanho invalido para os vetores!\nPor favor, tente novamente: ");
+                        System.out.print("\nTamanho inválido para os vetores!\nPor favor, tente novamente: ");
                         n = sc.nextInt();
                     }
                     v1 = new double[n];
@@ -109,7 +109,7 @@ public class AbaG {
                     System.out.print("\nDigite o tamanho do vetor: ");
                     n = sc.nextInt();
                     while (n < 1 || n > 20) {
-                        System.out.print("\nTamanho invalido para o vetor!\nPor favor, tente novamente: ");
+                        System.out.print("\nTamanho inválido para o vetor!\nPor favor, tente novamente: ");
                         n = sc.nextInt();
                     }
                     v = new double[n];
@@ -136,13 +136,13 @@ public class AbaG {
                     System.out.print("\nDigite a quantidade de linhas das matrizes: ");
                     m = sc.nextInt();
                     while (m < 1 || m > 10) {
-                        System.out.print("\nDimensao invalida!\nPor favor, tente novamente: ");
+                        System.out.print("\nDimensão inválida!\nPor favor, tente novamente: ");
                         m = sc.nextInt();
                     }
                     System.out.print("\nDigite a quantidade de colunas das matrizes: ");
                     n = sc.nextInt();
                     while (n < 1 || n > 10) {
-                        System.out.print("\nDimensao invalida!\nPor favor, tente novamente: ");
+                        System.out.print("\nDimensão inválida!\nPor favor, tente novamente: ");
                         n = sc.nextInt();
                     }
                     A = new int[m][n];
@@ -185,13 +185,13 @@ public class AbaG {
                     System.out.print("\nDigite a quantidade de linhas da primeira matriz: ");
                     m = sc.nextInt();
                     while (m < 1 || m > 10) {
-                        System.out.print("\nDimensao invalida!\nPor favor, tente novamente: ");
+                        System.out.print("\nDimensão inválida!\nPor favor, tente novamente: ");
                         m = sc.nextInt();
                     }
                     System.out.print("\nDigite a quantidade de colunas da segunda matriz\n(Equivalente a quantidade de linhas da segunda matriz): ");
                     n = sc.nextInt();
                     while (n < 1 || n > 10) {
-                        System.out.print("\nDimensao invalida!\nPor favor, tente novamente: ");
+                        System.out.print("\nDimensão inválida!\nPor favor, tente novamente: ");
                         n = sc.nextInt();
                     }
                     System.out.print("\nDigite a quantidade de colunas da segunda matriz: ");
@@ -240,7 +240,7 @@ public class AbaG {
                     System.out.print("\nDigite a ordem da matriz: ");
                     n = sc.nextInt();
                     while (n < 1 || n > 3) {
-                        System.out.print("\nOrdem de matriz invalida!\nPor favor, tente novamente: ");
+                        System.out.print("\nOrdem de matriz inválida!\nPor favor, tente novamente: ");
                         n = sc.nextInt();
                     }
                     M = new int[n][n];
@@ -274,7 +274,7 @@ public class AbaG {
                     System.out.print("\n");
                     break;
                 default:
-                    System.out.print("\nOpcao " + option + " invalida!\n\nRetornando ao menu da aba C");
+                    System.out.print("\nOpção " + option + " inválida!\n\nRetornando ao menu da aba C");
                     Thread.sleep(750);
                     for (char c : load.toCharArray()) {
                         System.out.print(c);

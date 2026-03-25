@@ -6,7 +6,7 @@ public class EstatisticaService {
     }
     public double media(double dados[]) {
         int n = dados.length;
-        if (dados == null || n == 0) throw new IllegalArgumentException("\nArray de dados invalido!\n");
+        if (dados == null || n == 0) throw new IllegalArgumentException("\nArray de dados inválido!\n");
         double soma = 0.0;
         for (double d : dados) {
             soma += d;
@@ -17,7 +17,7 @@ public class EstatisticaService {
         Arrays.sort(dados);
         int n = dados.length, freqMax = 0;
         double moda = dados[0];
-        if (dados == null || n == 0) throw new IllegalArgumentException("\nArray de dados invalido!\n");
+        if (dados == null || n == 0) throw new IllegalArgumentException("\nArray de dados inválido!\n");
         for (int i = 0; i < n; i++) {
             int freq = 0;
             for (int j = 0; j < n; j++) {
@@ -33,14 +33,14 @@ public class EstatisticaService {
     public double mediana(double dados[]) {
         Arrays.sort(dados);
         int n = dados.length;
-        if (dados == null || n == 0) throw new IllegalArgumentException("\nArray de dados invalido!\n");
+        if (dados == null || n == 0) throw new IllegalArgumentException("\nArray de dados inválido!\n");
         return (n % 2 == 0) ? (dados[(n / 2) - 1] + dados[n / 2]) / 2.0 : dados[n / 2];
     }
     public double variancia(double dados[]) {
         double soma = 0.0;
         double somaQuadrados = 0.0;
         int n = dados.length;
-        if (dados == null || n <= 1) throw new IllegalArgumentException("\nArray de dados invalido!\n");
+        if (dados == null || n <= 1) throw new IllegalArgumentException("\nArray de dados inválido!\n");
         for (double d : dados) {
             soma += d;
             somaQuadrados += d * d;
@@ -50,13 +50,13 @@ public class EstatisticaService {
         return (somaQuadrados - (n * mediaQuadrada)) / n - 1;
     }
     public double desvioPadrao(double dados[]) {
-        if (dados == null) throw new IllegalArgumentException("\nArray de dados invalido!\n");
+        if (dados == null) throw new IllegalArgumentException("\nArray de dados inválido!\n");
         return Math.sqrt(variancia(dados));
     }
     public double maiorDado(double dados[]) {
         double maior = -Double.MIN_VALUE;
         int n = dados.length;
-        if (dados == null || n == 0) throw new IllegalArgumentException("\nArray de dados invalido!\n");
+        if (dados == null || n == 0) throw new IllegalArgumentException("\nArray de dados inválido!\n");
         for (int i = 0; i < n; i++) {
             if (dados[i] > maior) maior = dados[i];
         }
@@ -65,14 +65,14 @@ public class EstatisticaService {
     public double menorDado(double dados[]) {
         double menor = Double.MAX_VALUE;
         int n = dados.length;
-        if (dados == null || n <= 0) throw new IllegalArgumentException("\nArray de dados invalido!\n");
+        if (dados == null || n <= 0) throw new IllegalArgumentException("\nArray de dados inválido!\n");
         for (int i = 0; i < n; i++) {
             if (dados[i] < menor) menor = dados[i];
         }
         return menor;
     }
     public double amplitude(double dados[]) {
-        if (dados == null) throw new IllegalArgumentException("\nArray de dados invalido!\n");
+        if (dados == null) throw new IllegalArgumentException("\nArray de dados inválido!\n");
         return maiorDado(dados) - menorDado(dados);
     }
 }

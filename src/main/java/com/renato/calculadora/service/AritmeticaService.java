@@ -13,11 +13,11 @@ public class AritmeticaService {
         return a * b;
     }
     public double divisao(int a, int b) {
-        if (b == 0) throw new ArithmeticException("\nDivisao por zero detectada!\n");
+        if (b == 0) throw new ArithmeticException("\nDivisão por zero detectada!\n");
         return (double) a / (double) b;
     }
     public int resto(int a, int b) {
-        if (b == 0) throw new ArithmeticException("\nDivisao por zero detectada!\n");
+        if (b == 0) throw new ArithmeticException("\nDivisão por zero detectada!\n");
         return a % b;
     }
     public double potenciacao(int a, int b) {

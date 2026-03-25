@@ -23,19 +23,19 @@ public class AbaB {
             System.out.println("9. Fatorial");
             System.out.println("10. Fatorial duplo");
             System.out.println("11. Termo de Fibonacci");
-            System.out.println("12. Sequencia de Fibonacci");
-            System.out.println("13. Somatorio");
-            System.out.println("14. Produtorio");
+            System.out.println("12. Sequência de Fibonacci");
+            System.out.println("13. Somatório");
+            System.out.println("14. Produtório");
             System.out.println("15. Termo de PA");
             System.out.println("16. Soma de PA");
             System.out.println("17. Termo de PG");
             System.out.println("18. Soma de PG");
             System.out.println("0. Retornar ao menu principal");
-            System.out.print("\nEscolha uma das opcoes acima: ");
+            System.out.print("\nEscolha uma das opções acima: ");
             option = sc.nextInt();
             switch (option) {
                 case 9:
-                    System.out.print("\nDigite um numero natural: ");
+                    System.out.print("\nDigite um número natural: ");
                     n = sc.nextInt();
                     try {
                         resultadoLong = seq.fatorial(n);
@@ -52,7 +52,7 @@ public class AbaB {
                     }
                     break;
                 case 10:
-                    System.out.print("\nDigite um numero natural: ");
+                    System.out.print("\nDigite um número natural: ");
                     n = sc.nextInt();
                     try {
                         resultadoLong = seq.fatorialDuplo(n);
@@ -69,7 +69,7 @@ public class AbaB {
                     }
                     break;
                 case 11:
-                    System.out.print("\nDigite um numero natural: ");
+                    System.out.print("\nDigite um número natural: ");
                     n = sc.nextInt();
                     try {
                         resultadoLong = seq.termoFibonacci(n);
@@ -86,11 +86,11 @@ public class AbaB {
                     }
                     break;
                 case 12:
-                    System.out.print("\nDigite um numero natural: ");
+                    System.out.print("\nDigite um número natural: ");
                     n = sc.nextInt();
                     try {
                         resultadoVetor = seq.sequenciaFibonacci(n);
-                        System.out.print("\nSequencia de " + n + " termos: ");
+                        System.out.print("\nSequência de " + n + " termos: ");
                         for (i = 0; i < n; i++) {
                             if (i == 0) System.out.print("[");
                             if (i > 0) System.out.print(", ");
@@ -119,7 +119,7 @@ public class AbaB {
                         b = temp;
                     }
                     resultadoLong = seq.somatorio(a, b);
-                    System.out.println("\nSomatorio de " + a + " -> " + b + ": " + resultadoLong + "\n");
+                    System.out.println("\nSomatório de " + a + " -> " + b + ": " + resultadoLong + "\n");
                     op = TipoOperacao.SOMATORIO;
                     registro = op + "; " + FormatUtils.formatar(a) + "; " + FormatUtils.formatar(b) + "; " + FormatUtils.formatar(resultadoLong);
                     try {
@@ -139,7 +139,7 @@ public class AbaB {
                         b = temp;
                     }
                     resultadoLong = seq.produtorio(a, b);
-                    System.out.println("\nProdutorio de " + a + " -> " + b + ": " + resultadoLong + "\n");
+                    System.out.println("\nProdutório de " + a + " -> " + b + ": " + resultadoLong + "\n");
                     op = TipoOperacao.PRODUTORIO;
                     registro = op + "; " + FormatUtils.formatar(a) + "; " + FormatUtils.formatar(b) + "; " + FormatUtils.formatar(resultadoLong);
                     try {
@@ -151,9 +151,9 @@ public class AbaB {
                 case 15:
                     System.out.print("\nDigite o primeiro termo da PA: ");
                     a1 = sc.nextDouble();
-                    System.out.print("Digite a razao da PA: ");
+                    System.out.print("Digite a razão da PA: ");
                     razao = sc.nextDouble();
-                    System.out.print("Digite a posicao do termo desejado: ");
+                    System.out.print("Digite a posição do termo desejado: ");
                     n = sc.nextInt();
                     try {
                         resultadoDouble = seq.termoPA(a1, razao, n);
@@ -173,7 +173,7 @@ public class AbaB {
                 case 16:
                     System.out.print("\nDigite o primeiro termo da PA: ");
                     a1 = sc.nextDouble();
-                    System.out.print("Digite a razao da PA: ");
+                    System.out.print("Digite a razão da PA: ");
                     razao = sc.nextDouble();
                     System.out.print("Digite a quantidade de termos desejada: ");
                     n = sc.nextInt();
@@ -195,9 +195,9 @@ public class AbaB {
                 case 17:
                     System.out.print("\nDigite o primeiro termo da PG: ");
                     a1 = sc.nextDouble();
-                    System.out.print("Digite a razao da PG: ");
+                    System.out.print("Digite a razão da PG: ");
                     razao = sc.nextDouble();
-                    System.out.print("Digite a posicao do termo desejado: ");
+                    System.out.print("Digite a posição do termo desejado: ");
                     n = sc.nextInt();
                     try {
                         resultadoDouble = seq.termoPG(a1, razao, n);
@@ -217,7 +217,7 @@ public class AbaB {
                 case 18:
                     System.out.print("\nDigite o primeiro termo da PG: ");
                     a1 = sc.nextDouble();
-                    System.out.print("Digite a razao da PG: ");
+                    System.out.print("Digite a razão da PG: ");
                     razao = sc.nextDouble();
                     System.out.print("Digite a quantidade de termos desejada: ");
                     n = sc.nextInt();
@@ -246,7 +246,7 @@ public class AbaB {
                     System.out.print("\n");
                     break;
                 default:
-                    System.out.print("\nOpcao " + option + " invalida!\n\nRetornando ao menu da aba B");
+                    System.out.print("\nOpção " + option + " inválida!\n\nRetornando ao menu da aba B");
                     Thread.sleep(750);
                     for (char c : load.toCharArray()) {
                         System.out.print(c);

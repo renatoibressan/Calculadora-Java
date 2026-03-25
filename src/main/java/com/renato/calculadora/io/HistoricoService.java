@@ -15,10 +15,10 @@ public class HistoricoService {
      public void carregarHistorico() throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(caminhoArquivo))) {
             String linha;
-            System.out.println("--------------------------------------------------------------");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------");
             while ((linha = reader.readLine()) != null) {
                 System.out.println(linha);
-                System.out.println("--------------------------------------------------------------");
+                System.out.println("--------------------------------------------------------------------------------------------------------------------------");
             }
             System.out.print("\n");
         }

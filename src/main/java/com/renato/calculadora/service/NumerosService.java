@@ -16,7 +16,7 @@ public class NumerosService {
         return Math.abs((a / mdc(a, b)) * b);
     }
     public boolean primoOuNao(int n) {
-        if (n < 0) throw new ArithmeticException("\nNumero invalido!\n");
+        if (n < 0) throw new ArithmeticException("\nNúmero inválido!\n");
         if (n == 0 || n == 1) return false;
         for (int i = 2; (i * i) <= n; i++) {
             if (n % i == 0) return false;
@@ -24,7 +24,7 @@ public class NumerosService {
         return true;
     }
     public boolean divisivelOuNao(int a, int b) {
-        if (b == 0) throw new ArithmeticException("\nDivisao por zero detectada!\n");
+        if (b == 0) throw new ArithmeticException("\nDivisão por zero detectada!\n");
         return a % b == 0;
     }
     public int quantidadeDivisores(int n) {

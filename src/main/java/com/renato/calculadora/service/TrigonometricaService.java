@@ -19,15 +19,15 @@ public class TrigonometricaService {
         return Math.tan(x);
     }
     public double arcoSeno(double razao) {
-        if (razao < -1 || razao > 1) throw new ArithmeticException("Valor da razao fora do dominio!");
+        if (razao < -1 || razao > 1) throw new ArithmeticException("Valor da razão fora do domínio!");
         return Math.asin(razao);
     }
     public double arcoCosseno(double razao) {
-        if (razao < -1 || razao > 1) throw new ArithmeticException("Valor da razao fora do dominio!");
+        if (razao < -1 || razao > 1) throw new ArithmeticException("Valor da razão fora do domínio!");
         return Math.acos(razao);
     }
     public double arcoTangente(double razao) {
-        if (razao < -1 || razao > 1) throw new ArithmeticException("Valor da razao fora do dominio!");
+        if (razao < -1 || razao > 1) throw new ArithmeticException("Valor da razão fora do domínio!");
         return Math.atan(razao);
     }
     public double secante(double x) {

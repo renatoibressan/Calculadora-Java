@@ -12,9 +12,9 @@ public class MathUtils {
         return Math.abs(x) < 1e-10;
     }
     public static String verdadeiroOuFalso(boolean afirmacao) {
-        return afirmacao ? "verdadeiro" : "falso";
+        return afirmacao ? "é verdadeiro" : "é falso";
     }
     public static String primoOuNao(boolean afirmacao) {
-        return afirmacao ? "primo" : "nao primo";
+        return afirmacao ? "é primo" : "não é primo";
     }
 }

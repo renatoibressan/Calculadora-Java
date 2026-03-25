@@ -12,16 +12,16 @@ public class MenuPrincipal {
         HistoricoService historico = new HistoricoService("historico.txt");
         do {
             System.out.print("\n");
-            System.out.println("A. Aba A: operacoes aritmeticas");
-            System.out.println("B. Aba B: operacoes sequenciais");
-            System.out.println("C. Aba C: operacoes de comparacao");
-            System.out.println("D. Aba D: operacoes trigonometricas");
-            System.out.println("E. Aba E: operacoes numericas");
-            System.out.println("F. Aba F: operacoes estatisticas");
-            System.out.println("G. Aba G: operacoes vetoriais/matriciais");
+            System.out.println("A. Aba A: operações aritméticas");
+            System.out.println("B. Aba B: operações sequenciais");
+            System.out.println("C. Aba C: operações de comparação");
+            System.out.println("D. Aba D: operações trigonométricas");
+            System.out.println("E. Aba E: operações numéricas");
+            System.out.println("F. Aba F: operações estatísticas");
+            System.out.println("G. Aba G: operações vetoriais/matriciais");
             System.out.println("0. Encerrar o programa");
-            System.out.println("1. Carregar historico");
-            System.out.println("2. Limpar historico");
+            System.out.println("1. Carregar histórico");
+            System.out.println("2. Limpar histórico");
             System.out.print("\nSelecione uma das opcoes acima: ");
             option = Character.toUpperCase(sc.next().charAt(0));
             switch (option) {
@@ -128,13 +128,13 @@ public class MenuPrincipal {
                     System.out.println("\n");
                     try {
                         historico.limparHistorico();
-                        System.out.println("\nHistorico limpo com sucesso!\n");
+                        System.out.println("\nHistórico limpo com sucesso!\n");
                     } catch (IOException e) {
                         System.out.println("\nErro ao limpar histórico!\n");
                     }
                     break;
                 default:
-                    System.out.print("\nOpcao " + option + " invalida!\n\nRetornando ao menu principal");
+                    System.out.print("\nOpção " + option + " inválida!\n\nRetornando ao menu principal");
                     Thread.sleep(750);
                     for (char c : load.toCharArray()) {
                         System.out.print(c);

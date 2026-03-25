@@ -19,23 +19,23 @@ public class AbaF {
         TipoOperacao op;
         do {
             casasDecimais = 0;
-            System.out.println("41. Media");
+            System.out.println("41. Média");
             System.out.println("42. Moda");
             System.out.println("43. Mediana");
-            System.out.println("44. Variancia");
-            System.out.println("45. Desvio padrao");
+            System.out.println("44. Variância");
+            System.out.println("45. Desvio padrão");
             System.out.println("46. Maior dado");
             System.out.println("47. Menor dado");
             System.out.println("48. Amplitude");
             System.out.println("0. Retornar ao menu principal");
-            System.out.print("\nEscolha uma das opcoes acima: ");
+            System.out.print("\nEscolha uma das opções acima: ");
             option = sc.nextInt();
             switch (option) {
                 case 41:
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     while (n < 1 || n > limite) {
-                        System.out.print("\nQuantidade de dados invalida!\nPor favor, tente novamente: ");
+                        System.out.print("\nQuantidade de dados inválida!\nPor favor, tente novamente: ");
                         n = sc.nextInt();
                     }
                     System.out.print("\n");
@@ -47,7 +47,7 @@ public class AbaF {
                     try {
                         resultadoDouble = stats.media(dados);
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
-                        System.out.println("\nMedia: " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        System.out.println("\nMédia: " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                         op = TipoOperacao.MEDIA;
                         registro = op + "; " + FormatUtils.formatar(dados) + "; " + FormatUtils.formatar(resultadoDouble);
                         try {
@@ -63,7 +63,7 @@ public class AbaF {
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     while (n < 1 || n > limite) {
-                        System.out.print("\nQuantidade de dados invalida!\nPor favor, tente novamente: ");
+                        System.out.print("\nQuantidade de dados inválida!\nPor favor, tente novamente: ");
                         n = sc.nextInt();
                     }
                     System.out.print("\n");
@@ -91,7 +91,7 @@ public class AbaF {
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     while (n < 1 || n > limite) {
-                        System.out.print("\nQuantidade de dados invalida!\nPor favor, tente novamente: ");
+                        System.out.print("\nQuantidade de dados inválida!\nPor favor, tente novamente: ");
                         n = sc.nextInt();
                     }
                     System.out.print("\n");
@@ -119,7 +119,7 @@ public class AbaF {
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     while (n < 2 || n > limite) {
-                        System.out.print("\nQuantidade de dados invalida!\nPor favor, tente novamente: ");
+                        System.out.print("\nQuantidade de dados inválida!\nPor favor, tente novamente: ");
                         n = sc.nextInt();
                     }
                     System.out.print("\n");
@@ -131,7 +131,7 @@ public class AbaF {
                     try {
                         resultadoDouble = stats.variancia(dados);
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
-                        System.out.println("\nVariancia: " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        System.out.println("\nVariância: " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                         op = TipoOperacao.VARIANCIA;
                         registro = op + "; " + FormatUtils.formatar(dados) + "; " + FormatUtils.formatar(resultadoDouble);
                         try {
@@ -147,7 +147,7 @@ public class AbaF {
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     while (n < 2 || n > limite) {
-                        System.out.print("\nQuantidade de dados invalida!\nPor favor, tente novamente: ");
+                        System.out.print("\nQuantidade de dados inválida!\nPor favor, tente novamente: ");
                         n = sc.nextInt();
                     }
                     System.out.print("\n");
@@ -159,7 +159,7 @@ public class AbaF {
                     try {
                         resultadoDouble = stats.desvioPadrao(dados);
                         if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
-                        System.out.println("\nDesvio padrao: " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
+                        System.out.println("\nDesvio padrão: " + String.format("%." + casasDecimais + "f", resultadoDouble) + "\n");
                         op = TipoOperacao.DESVIO_PADRAO;
                         registro = op + "; " + FormatUtils.formatar(dados) + "; " + FormatUtils.formatar(resultadoDouble);
                         try {
@@ -175,7 +175,7 @@ public class AbaF {
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     while (n < 1 || n > limite) {
-                        System.out.print("\nQuantidade de dados invalida!\nPor favor, tente novamente: ");
+                        System.out.print("\nQuantidade de dados inválida!\nPor favor, tente novamente: ");
                         n = sc.nextInt();
                     }
                     System.out.print("\n");
@@ -203,7 +203,7 @@ public class AbaF {
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     while (n < 1 || n > limite) {
-                        System.out.print("\nQuantidade de dados invalida!\nPor favor, tente novamente: ");
+                        System.out.print("\nQuantidade de dados inválida!\nPor favor, tente novamente: ");
                         n = sc.nextInt();
                     }
                     System.out.print("\n");
@@ -231,7 +231,7 @@ public class AbaF {
                     System.out.print("\nDigite a quantidade de dados desejada: ");
                     n = sc.nextInt();
                     while (n < 1 || n > limite) {
-                        System.out.print("\nQuantidade de dados invalida!\nPor favor, tente novamente: ");
+                        System.out.print("\nQuantidade de dados inválida!\nPor favor, tente novamente: ");
                         n = sc.nextInt();
                     }
                     System.out.print("\n");
@@ -265,7 +265,7 @@ public class AbaF {
                     System.out.print("\n");
                     break;
                 default:
-                    System.out.print("\nOpcao " + option + " invalida!\n\nRetornando ao menu da aba C");
+                    System.out.print("\nOpção " + option + " inválida!\n\nRetornando ao menu da aba C");
                     Thread.sleep(750);
                     for (char c : load.toCharArray()) {
                         System.out.print(c);

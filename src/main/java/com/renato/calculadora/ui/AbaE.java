@@ -21,19 +21,19 @@ public class AbaE {
         do {
             System.out.println("35. MDC");
             System.out.println("36. MMC");
-            System.out.println("37. Primo ou nao");
-            System.out.println("38. Divisivel ou nao");
+            System.out.println("37. Primo ou não");
+            System.out.println("38. Divisível ou não");
             System.out.println("39. Quantidade de divisores");
             System.out.println("40. Divisores");
             System.out.println("0. Retornar ao menu principal");
-            System.out.print("\nEscolha uma das opcoes acima: ");
+            System.out.print("\nEscolha uma das opções acima: ");
             option = sc.nextInt();
             switch (option) {
                 case 35:
-                    System.out.print("\nDigite o primeiro numero: ");
+                    System.out.print("\nDigite o primeiro número: ");
                     a = sc.nextInt();
                     a = Math.abs(a);
-                    System.out.print("Digite o segundo numero: ");
+                    System.out.print("Digite o segundo número: ");
                     b = sc.nextInt();
                     b = Math.abs(b);
                     if (a > b) {
@@ -52,10 +52,10 @@ public class AbaE {
                     }
                     break;
                 case 36:
-                    System.out.print("\nDigite o primeiro numero: ");
+                    System.out.print("\nDigite o primeiro número: ");
                     a = sc.nextInt();
                     a = Math.abs(a);
-                    System.out.print("Digite o segundo numero: ");
+                    System.out.print("Digite o segundo número: ");
                     b = sc.nextInt();
                     b = Math.abs(b);
                     if (a > b) {
@@ -74,7 +74,7 @@ public class AbaE {
                     }
                     break;
                 case 37:
-                    System.out.print("\nDigite um numero natural: ");
+                    System.out.print("\nDigite um número natural: ");
                     n = sc.nextInt();
                     try {
                         resultadoBoolean = num.primoOuNao(n);
@@ -112,7 +112,7 @@ public class AbaE {
                     }
                     break;
                 case 39:
-                    System.out.print("\nDigite um numero inteiro nao nulo: ");
+                    System.out.print("\nDigite um número inteiro não nulo: ");
                     n = sc.nextInt();
                     try {
                         resultadoInt = num.quantidadeDivisores(n);
@@ -129,7 +129,7 @@ public class AbaE {
                     }
                     break;
                 case 40:
-                    System.out.print("\nDigite um numero inteiro nao nulo: ");
+                    System.out.print("\nDigite um número inteiro não nulo: ");
                     n = sc.nextInt();
                     int x = num.quantidadeDivisores(n);
                     try {
@@ -163,7 +163,7 @@ public class AbaE {
                     System.out.print("\n");
                     break;
                 default:
-                    System.out.print("\nOpcao " + option + " invalida!\n\nRetornando ao menu da aba C");
+                    System.out.print("\nOpção " + option + " inválida!\n\nRetornando ao menu da aba C");
                     Thread.sleep(750);
                     for (char c : load.toCharArray()) {
                         System.out.print(c);

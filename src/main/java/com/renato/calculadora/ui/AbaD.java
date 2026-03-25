@@ -30,11 +30,11 @@ public class AbaD {
             System.out.println("33. Cossecante");
             System.out.println("34. Cotangente");
             System.out.println("0. Retornar ao menu principal");
-            System.out.print("\nEscolha uma das opcoes acima: ");
+            System.out.print("\nEscolha uma das opções acima: ");
             option = sc.nextInt();
             switch (option) {
                 case 25:
-                    System.out.print("\nDigite o valor do angulo: ");
+                    System.out.print("\nDigite o valor do ângulo: ");
                     x = sc.nextDouble();
                     resultadoDouble = trig.valorRadianos(x);
                     if (!MathUtils.inteiroOuNao(x)) f = MathUtils.contarCasasDecimais(x);
@@ -49,7 +49,7 @@ public class AbaD {
                     }
                     break;
                 case 26:
-                    System.out.print("\nDigite o valor do angulo: ");
+                    System.out.print("\nDigite o valor do ângulo: ");
                     x = sc.nextDouble();
                     resultadoDouble = trig.seno(x);
                     if (!MathUtils.inteiroOuNao(x)) f = MathUtils.contarCasasDecimais(x);
@@ -64,7 +64,7 @@ public class AbaD {
                     }
                     break;
                 case 27:
-                    System.out.print("\nDigite o valor do angulo: ");
+                    System.out.print("\nDigite o valor do ângulo: ");
                     x = sc.nextDouble();
                     resultadoDouble = trig.cosseno(x);
                     if (!MathUtils.inteiroOuNao(x)) f = MathUtils.contarCasasDecimais(x);
@@ -79,7 +79,7 @@ public class AbaD {
                     }
                     break;
                 case 28:
-                    System.out.print("\nDigite o valor do angulo: ");
+                    System.out.print("\nDigite o valor do ângulo: ");
                     x = sc.nextDouble();
                     try {
                         resultadoDouble = trig.tangente(x);
@@ -98,7 +98,7 @@ public class AbaD {
                     }
                     break;
                 case 29:
-                    System.out.print("\nDigite o valor da razao: ");
+                    System.out.print("\nDigite o valor da razão: ");
                     razao = sc.nextDouble();
                     try {
                         resultadoDouble = trig.arcoSeno(razao);
@@ -117,7 +117,7 @@ public class AbaD {
                     }
                     break;
                 case 30:
-                    System.out.print("\nDigite o valor da razao: ");
+                    System.out.print("\nDigite o valor da razão: ");
                     razao = sc.nextDouble();
                     try {
                         resultadoDouble = trig.arcoCosseno(razao);
@@ -136,7 +136,7 @@ public class AbaD {
                     }
                     break;
                 case 31:
-                    System.out.print("\nDigite o valor da razao: ");
+                    System.out.print("\nDigite o valor da razão: ");
                     razao = sc.nextDouble();
                     try {
                         resultadoDouble = trig.arcoTangente(razao);
@@ -155,7 +155,7 @@ public class AbaD {
                     }
                     break;
                 case 32:
-                    System.out.print("\nDigite o valor do angulo: ");
+                    System.out.print("\nDigite o valor do ângulo: ");
                     x = sc.nextDouble();
                     try {
                         resultadoDouble = trig.secante(x);
@@ -174,7 +174,7 @@ public class AbaD {
                     }
                     break;
                 case 33:
-                    System.out.print("\nDigite o valor do angulo: ");
+                    System.out.print("\nDigite o valor do ângulo: ");
                     x = sc.nextDouble();
                     try {
                         resultadoDouble = trig.cossecante(x);
@@ -193,7 +193,7 @@ public class AbaD {
                     }
                     break;
                 case 34:
-                    System.out.print("\nDigite o valor do angulo: ");
+                    System.out.print("\nDigite o valor do ângulo: ");
                     x = sc.nextDouble();
                     try {
                         resultadoDouble = trig.cotangente(x);
@@ -221,7 +221,7 @@ public class AbaD {
                     System.out.print("\n");
                     break;
                 default:
-                    System.out.print("\nOpcao " + option + " invalida!\n\nRetornando ao menu da aba C");
+                    System.out.print("\nOpção " + option + " inválida!\n\nRetornando ao menu da aba C");
                     Thread.sleep(750);
                     for (char c : load.toCharArray()) {
                         System.out.print(c);

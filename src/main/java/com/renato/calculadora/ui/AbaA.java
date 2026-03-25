@@ -19,16 +19,16 @@ public class AbaA {
         do {
             f = 0;
             casasDecimais = 0;
-            System.out.println("1. Adicao");
-            System.out.println("2. Subtracao");
-            System.out.println("3. Multiplicacao");
-            System.out.println("4. Divisao");
+            System.out.println("1. Adição");
+            System.out.println("2. Subtração");
+            System.out.println("3. Multiplicação");
+            System.out.println("4. Divisão");
             System.out.println("5. Resto");
-            System.out.println("6. Potenciacao");
+            System.out.println("6. Potenciação");
             System.out.println("7. Raiz quadrada");
-            System.out.println("8. Modulo");
+            System.out.println("8. Módulo");
             System.out.println("0. Retornar ao menu principal");
-            System.out.print("\nEscolha uma das opcoes acima: ");
+            System.out.print("\nEscolha uma das opções acima: ");
             option = sc.nextInt();
             switch (option) {
                 case 1:
@@ -136,7 +136,7 @@ public class AbaA {
                     }
                     break;
                 case 7:
-                    System.out.print("\nDigite uma base real nao negativa: ");
+                    System.out.print("\nDigite uma base real não negativa: ");
                     m = sc.nextDouble();
                     try {
                         resultadoDouble = arit.raizQuadrada(m);
@@ -155,7 +155,7 @@ public class AbaA {
                     }
                     break;
                 case 8:
-                    System.out.print("\nDigite um numero inteiro: ");
+                    System.out.print("\nDigite um número inteiro: ");
                     n = sc.nextInt();
                     resultadoInt = arit.modulo(n);
                     System.out.println("\n|" + n + "| = " + resultadoInt + "\n");
@@ -177,7 +177,7 @@ public class AbaA {
                     System.out.print("\n");
                     break;
                 default:
-                    System.out.print("\nOpcao " + option + " invalida!\n\nRetornando ao menu da aba A");
+                    System.out.print("\nOpção " + option + " inválida!\n\nRetornando ao menu da aba A");
                     Thread.sleep(750);
                     for (char c : load.toCharArray()) {
                         System.out.print(c);
