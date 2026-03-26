@@ -12,10 +12,10 @@ import java.util.Scanner;
 public class AbaH {
     public static void executarAbaH(Scanner sc) throws InterruptedException {
         System.out.println("\n===== ABA H =====\n");
-        int option = -1, casasDecimais;
+        int option = -1, casasDecimaisVI, casasDecimaisRF;
         double valor, resultadoDouble;
         char escala1, escala2;
-        String load = "...", registro, unit1, unit2;
+        String load = "...", registro, unit1, unit2, valorInicial, resultadoFinal;
         ConversorService conv = new ConversorService();
         TemperaturaService temp = new TemperaturaService();
         TipoUnidade unitInicial, unitFinal;
@@ -23,7 +23,8 @@ public class AbaH {
         HistoricoService historico = new HistoricoService("historico.txt");
         TipoOperacao op;
         do {
-            casasDecimais = 0;
+            casasDecimaisVI = 0;
+            casasDecimaisRF = 0;
             System.out.println("55. Conversão de medidas");
             System.out.println("56. Conversão de temperaturas");
             System.out.println("0. Retornar ao menu principal");
@@ -51,8 +52,11 @@ public class AbaH {
                     unitFinal = TipoUnidade.medida(unit2);
                     try {
                         resultadoDouble = conv.converterMedida(valor, unitInicial, unitFinal);
-                        if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
-                        System.out.println("\n" + valor + unit1 + " = " + String.format("%." + casasDecimais + "f", resultadoDouble) + unit2 + "\n");
+                        if (!MathUtils.inteiroOuNao(valor)) casasDecimaisVI = MathUtils.contarCasasDecimais(valor);
+                        if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimaisRF = MathUtils.contarCasasDecimais(resultadoDouble);
+                        valorInicial = String.format("%." + casasDecimaisVI + "f", valor);
+                        resultadoFinal = String.format("%." + casasDecimaisRF + "f", resultadoDouble);
+                        System.out.println("\n" + valorInicial + unit1 + " = " + resultadoFinal + unit2 + "\n");
                         op = TipoOperacao.CONVERSAO_MEDIDAS;
                         registro = op + "; " + FormatUtils.formatar(valor) + "; " + FormatUtils.formatar(unit1) + "; " + FormatUtils.formatar(resultadoDouble) + "; " + FormatUtils.formatar(unit2);
                         try {
@@ -80,8 +84,11 @@ public class AbaH {
                     escalaFinal = UnidadeTemperatura.escala(escala2);
                     try {
                         resultadoDouble = temp.converterTemperatura(valor, escalaInicial, escalaFinal);
-                        if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimais = MathUtils.contarCasasDecimais(resultadoDouble);
-                        System.out.println("\n" + valor + escala1 + " = " + String.format("%." + casasDecimais + "f", resultadoDouble) + escala2 + "\n");
+                        if (!MathUtils.inteiroOuNao(valor)) casasDecimaisVI = MathUtils.contarCasasDecimais(valor);
+                        if (!MathUtils.inteiroOuNao(resultadoDouble)) casasDecimaisRF = MathUtils.contarCasasDecimais(resultadoDouble);
+                        valorInicial = String.format("%." + casasDecimaisVI + "f", valor);
+                        resultadoFinal = String.format("%." + casasDecimaisRF + "f", resultadoDouble);
+                        System.out.println("\n" + valorInicial + escala1 + " = " + resultadoFinal + escala2 + "\n");
                         op = TipoOperacao.CONVERSAO_TEMPERATURAS;
                         registro = op + "; " + FormatUtils.formatar(valor) + "; " + FormatUtils.formatar(escala1) + "; " + FormatUtils.formatar(resultadoDouble) + "; " + FormatUtils.formatar(escala2);
                         try {
